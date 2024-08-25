@@ -1,14 +1,17 @@
 import Link from 'next/link';
-import style from './page.module.scss';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { Header } from '@/components/Header';
+import Home from './home/page';
 
-const Home = () => {
+const Main = () => {
   return (
-    <div className={style.container}>
-      <h1 className={style.title}>Home Page</h1>
-      <p>Welcome to the Home Page!</p>
-      <Link href="about">Go to About Page</Link>
-    </div>
+    <>
+      <ErrorBoundary>
+        <Header />
+        <Home />
+      </ErrorBoundary>
+    </>
   );
 };
 
-export default Home;
+export default Main;

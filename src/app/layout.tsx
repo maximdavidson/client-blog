@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Head from 'next/head';
 import './globals.scss';
 
 type Props = {
@@ -8,9 +9,11 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <html lang="en">
-      <head>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
         <title>Client Blog</title>
-      </head>
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
       <body>{children}</body>
     </html>
   );
