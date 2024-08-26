@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { SlArrowRight } from 'react-icons/sl';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
@@ -19,11 +18,7 @@ export const AboutUs = () => {
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div className={style.btn}>
-              <Button
-                variant="secondary"
-                size="without"
-                icon={<SlArrowRight />}
-              >
+              <Button variant="secondary" size="without">
                 Read More
               </Button>
             </div>

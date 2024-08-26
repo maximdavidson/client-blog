@@ -7,6 +7,8 @@ import { Category } from './components/Category';
 import { SpecialPost } from './components/SpecialPost';
 import { ListOfAuthors } from './components/ListOfAuthors';
 import { FuturedIn } from './components/FuturedIn';
+import { Testimonial } from './components/Testimonials';
+import { JoinUs } from './components/JoinUs';
 
 const Home = () => {
   return (
@@ -18,6 +20,8 @@ const Home = () => {
       <SpecialPost />
       <ListOfAuthors />
       <FuturedIn />
+      <Testimonial />
+      <JoinUs />
     </div>
   );
 };

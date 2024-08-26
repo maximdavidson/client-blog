@@ -3,7 +3,7 @@ import style from './style.module.scss';
 
 export const Header = () => {
   return (
-    <div className={style.container}>
+    <header className={style.container}>
       <h1 className={style.title}>Modsen Client Blog</h1>
       <div className={style.navigate_wrap}>
         <nav className={style.navigation}>
@@ -14,6 +14,6 @@ export const Header = () => {
         </nav>
         <button className={style.video_btn}>Video about us</button>
       </div>
-    </div>
+    </header>
   );
 };
