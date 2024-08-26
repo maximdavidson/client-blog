@@ -44,35 +44,6 @@
   color: rgba(109, 110, 118, 0.661);
 }
 
-.more_btn {
-  cursor: pointer;
-  background: rgba(255, 208, 80, 1);
-  padding: 16px 48px;
-  border: none;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  font-size: 18px;
-  font-weight: 700;
-  margin-top: 48px;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: rgba(255, 185, 50, 1);
-  }
-
-  &:hover .arrow {
-    transform: translateX(8px);
-  }
-}
-
-.arrow {
-  max-width: 12px;
-  transition: transform 0.3s ease;
-}
-
 .title_wrap {
   display: flex;
   align-items: center;

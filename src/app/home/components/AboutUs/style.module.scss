@@ -27,10 +27,6 @@
   padding-bottom: 56px;
 }
 
-.about_wrap {
-  /* ваши стили */
-}
-
 .sub_title {
   font-size: 16px;
   font-weight: 600;
@@ -54,10 +50,6 @@
   color: rgba(109, 110, 118, 0.661);
 }
 
-.mission_wrap {
-  /* ваши стили */
-}
-
 .mission_title {
   max-width: 481px;
   font-size: 28px;
@@ -65,26 +57,7 @@
   line-height: 40px;
 }
 
-.more_btn {
-  cursor: pointer;
-  border: none;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  font-size: 18px;
-  font-weight: 700;
-  margin-top: 48px;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease;
-  color: rgba(89, 46, 169, 1);
-
-  &:hover .arrow {
-    transform: translateX(8px);
-  }
-}
-
-.arrow {
-  max-width: 12px;
-  transition: transform 0.3s ease;
+.btn {
+  margin: 0;
+  padding: 0;
 }

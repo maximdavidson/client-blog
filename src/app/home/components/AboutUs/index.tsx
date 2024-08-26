@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SlArrowRight } from 'react-icons/sl';
+import Button from '@/UI/Button';
 import style from './style.module.scss';
 
 export const AboutUs = () => {
@@ -17,9 +18,15 @@ export const AboutUs = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <button className={style.more_btn}>
-              Read More <SlArrowRight className={style.arrow} />
-            </button>
+            <div className={style.btn}>
+              <Button
+                variant="secondary"
+                size="without"
+                icon={<SlArrowRight />}
+              >
+                Read More
+              </Button>
+            </div>
           </div>
           <div className={style.mission_wrap}>
             <h4 className={style.sub_title}>OUR MISSION</h4>

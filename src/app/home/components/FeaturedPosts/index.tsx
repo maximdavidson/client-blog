@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { SlArrowRight } from 'react-icons/sl';
+import Button from '@/UI/Button'; // Импортируем кастомный компонент Button
 import style from './style.module.scss';
 
 export const FeaturedPosts = () => {
@@ -29,9 +30,9 @@ export const FeaturedPosts = () => {
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
             cupidatat non proident.
           </p>
-          <button className={style.more_btn}>
-            Read More <SlArrowRight className={style.arrow} />
-          </button>
+          <Button variant="primary" size="medium" icon={<SlArrowRight />}>
+            Read More
+          </Button>
         </div>
       </div>
 
