@@ -4,7 +4,7 @@ import { SlArrowRight } from 'react-icons/sl';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
-export const HomeHero = () => {
+const HomeHero = () => {
   return (
     <div className={style.container}>
       <Image
@@ -38,3 +38,5 @@ export const HomeHero = () => {
     </div>
   );
 };
+
+export default HomeHero;

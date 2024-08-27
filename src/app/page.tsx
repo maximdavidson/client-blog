@@ -1,16 +1,36 @@
-import { AboutUs } from './components/AboutUs';
-import { FeaturedPosts } from './components/FeaturedPosts';
-import { HomeHero } from './components/HomeHero';
-import style from './page.module.scss';
-import { Category } from './components/Category';
-import { SpecialPost } from './components/SpecialPost';
-import { ListOfAuthors } from './components/ListOfAuthors';
-import { FuturedIn } from './components/FuturedIn';
-import { Testimonial } from './components/Testimonials';
-import { JoinUs } from './components/JoinUs';
+import dynamic from 'next/dynamic';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import style from './page.module.scss';
+
+const HomeHero = dynamic(() => import('./components/HomeHero'), {
+  ssr: false,
+});
+const FeaturedPosts = dynamic(() => import('./components/FeaturedPosts'), {
+  ssr: false,
+});
+const AboutUs = dynamic(() => import('./components/AboutUs'), {
+  ssr: false,
+});
+const Category = dynamic(() => import('./components/Category'), {
+  ssr: false,
+});
+const SpecialPost = dynamic(() => import('./components/SpecialPost'), {
+  ssr: false,
+});
+const ListOfAuthors = dynamic(() => import('./components/ListOfAuthors'), {
+  ssr: false,
+});
+const FuturedIn = dynamic(() => import('./components/FuturedIn'), {
+  ssr: false,
+});
+const Testimonial = dynamic(() => import('./components/Testimonials'), {
+  ssr: false,
+});
+const JoinUs = dynamic(() => import('./components/JoinUs'), {
+  ssr: false,
+});
 
 const Home = () => {
   return (

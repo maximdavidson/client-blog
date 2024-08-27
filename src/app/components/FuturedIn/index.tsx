@@ -1,7 +1,7 @@
 import style from './style.module.scss';
 import Image from 'next/image';
 
-export const FuturedIn = () => {
+const FuturedIn = () => {
   return (
     <div className={style.container}>
       <div className={style.wrapper}>
@@ -43,3 +43,5 @@ export const FuturedIn = () => {
     </div>
   );
 };
+
+export default FuturedIn;

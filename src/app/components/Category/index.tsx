@@ -1,8 +1,7 @@
 import { CategoryCard } from './components/CategoryCard';
 import style from './style.module.scss';
-import Image from 'next/image';
 
-export const Category = () => {
+const Category = () => {
   return (
     <div className={style.container}>
       <h1 className={style.title}>Choose A Category</h1>
@@ -43,3 +42,5 @@ export const Category = () => {
     </div>
   );
 };
+
+export default Category;

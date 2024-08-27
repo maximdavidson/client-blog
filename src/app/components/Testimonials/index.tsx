@@ -1,7 +1,29 @@
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import style from './style.module.scss';
+import { testimonials } from '@/Constants/testimonials';
 
-export const Testimonial = () => {
+const Testimonial = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [_, setDirection] = useState(0);
+
+  const handlePrevClick = () => {
+    setDirection(-1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1,
+    );
+  };
+
+  const handleNextClick = () => {
+    setDirection(1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1,
+    );
+  };
+
+  const currentTestimonial = testimonials[currentIndex];
+
   return (
     <div className={style.container}>
       <div className={style.leftSection}>
@@ -13,30 +35,27 @@ export const Testimonial = () => {
         </p>
       </div>
       <div className={style.rightSection}>
-        <p className={style.testimonialText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p className={style.testimonialText}>{currentTestimonial.text}</p>
 
         <div className={style.authorSection}>
           <div className={style.profile}>
             <Image
-              src="/images/Jonathan_Vallem.png"
-              alt="Jonathan Vallem Avatar"
+              src={currentTestimonial.avatar}
+              alt={`${currentTestimonial.author} Avatar`}
               width={48}
               height={48}
               className={style.avatar}
             />
             <div className={style.authorInfo}>
-              <h3 className={style.name}>Jonathan Vallem</h3>
-              <p className={style.location}>New York, USA</p>
+              <h3 className={style.name}>{currentTestimonial.author}</h3>
+              <p className={style.location}>{currentTestimonial.location}</p>
             </div>
           </div>
           <div className={style.navigation}>
-            <button className={style.navButton}>
+            <button className={style.navButton} onClick={handlePrevClick}>
               <span className={style.navArrow}>&larr;</span>
             </button>
-            <button className={style.navButton}>
+            <button className={style.navButton} onClick={handleNextClick}>
               <span className={style.navArrow}>&rarr;</span>
             </button>
           </div>
@@ -45,3 +64,5 @@ export const Testimonial = () => {
     </div>
   );
 };
+
+export default Testimonial;

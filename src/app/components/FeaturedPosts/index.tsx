@@ -4,7 +4,7 @@ import { SlArrowRight } from 'react-icons/sl';
 import Button from '@/UI/Button'; // Импортируем кастомный компонент Button
 import style from './style.module.scss';
 
-export const FeaturedPosts = () => {
+const FeaturedPosts = () => {
   return (
     <div className={style.container}>
       <div className={style.feature_wrap}>
@@ -79,3 +79,5 @@ export const FeaturedPosts = () => {
     </div>
   );
 };
+
+export default FeaturedPosts;

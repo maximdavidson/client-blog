@@ -1,7 +1,7 @@
 import style from './style.module.scss';
 import { AuthorCard } from './components/AuthorCard';
 
-export const ListOfAuthors = () => {
+const ListOfAuthors = () => {
   const authors = [
     {
       avatarSrc: '/images/Floyd_Miles.png',
@@ -66,3 +66,5 @@ export const ListOfAuthors = () => {
     </div>
   );
 };
+
+export default ListOfAuthors;

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
-export const AboutUs = () => {
+const AboutUs = () => {
   return (
     <div className={style.container}>
       <div className={style.stripe}></div>
@@ -40,3 +40,5 @@ export const AboutUs = () => {
     </div>
   );
 };
+
+export default AboutUs;

@@ -3,7 +3,7 @@ import Button from '@/UI/Button';
 import { SlArrowRight } from 'react-icons/sl';
 import Image from 'next/image';
 
-export const SpecialPost = () => {
+const SpecialPost = () => {
   return (
     <div className={style.container}>
       <div className={style.wrapper}>
@@ -34,3 +34,5 @@ export const SpecialPost = () => {
     </div>
   );
 };
+
+export default SpecialPost;

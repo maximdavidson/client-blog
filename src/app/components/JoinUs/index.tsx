@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
-export const JoinUs = () => {
+const JoinUs = () => {
   return (
     <div className={style.container}>
       <h1 className={style.title}>Join our team to be a part of our story</h1>
@@ -16,3 +16,5 @@ export const JoinUs = () => {
     </div>
   );
 };
+
+export default JoinUs;
