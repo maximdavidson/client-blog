@@ -1,0 +1,59 @@
+.collection {
+  margin-left: 80px;
+  margin-top: 128px;
+  margin-bottom: 128px;
+}
+
+.collection_title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -2px;
+  margin-bottom: 64px;
+}
+
+.collection_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 32px;
+}
+
+.collection_title {
+  max-width: 405px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+}
+
+.collection_description {
+  max-width: 405px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(109, 110, 118, 1);
+}
+
+.collection_meta {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.collection_author {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: rgba(89, 46, 169, 1);
+}
+
+.line {
+  margin-top: 64px;
+  background-color: rgba(214, 214, 214, 0.637);
+  width: 1280px;
+  height: 2px;
+  margin-bottom: 16px;
+}

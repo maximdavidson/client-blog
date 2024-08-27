@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Button from '@/UI/Button';
+import Link from 'next/link';
 import style from './style.module.scss';
 
 const JoinUs = () => {
@@ -10,9 +10,11 @@ const JoinUs = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt.
       </p>
-      <Button variant="primary" size="medium" icon={null}>
-        Join Now
-      </Button>
+      <Link href="contactPage">
+        <Button variant="primary" size="medium" icon={null}>
+          Join Now
+        </Button>
+      </Link>
     </div>
   );
 };
