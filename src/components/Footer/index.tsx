@@ -1,10 +1,41 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import style from './style.module.scss';
 import Button from '@/UI/Button';
+import emailjs from '@emailjs/browser';
+import style from './style.module.scss';
 
 export const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const templateParams = {
+        to_email: email,
+      };
+
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID!,
+      );
+
+      setIsSubscribed(true);
+      setEmail('');
+    } catch (error) {
+      console.error('Failed to send email:', error);
+    }
+  };
+
   return (
     <footer className={style.footer}>
       <div className={style.container}>
@@ -25,23 +56,22 @@ export const Footer = () => {
           <h2 className={style.sub_text}>
             Subscribe to our newsletter to get the latest updates and news
           </h2>
-          <div className={style.inputWrapper}>
+          <form className={style.inputWrapper} onSubmit={handleSubscribe}>
             <input
               className={style.input}
               type="email"
               placeholder="Enter Your Email"
+              value={email}
+              onChange={handleInputChange}
+              required
             />
+
             <div className={style.btnWrapper}>
-              <Button
-                className={style.btn}
-                variant="primary"
-                size="medium"
-                icon={null}
-              >
-                Subscribe
+              <Button variant="primary" size="large" icon={null} type="submit">
+                {isSubscribed ? 'Done' : 'Subscribe'}
               </Button>
             </div>
-          </div>
+          </form>
         </div>
 
         <div className={style.bottom}>
@@ -52,34 +82,34 @@ export const Footer = () => {
           <div className={style.socials}>
             <a href="https://facebook.com">
               <Image
-                src="/images/FaceBook.png"
+                src="/images/FaceBookGrey.png"
                 alt="FaceBook Logo"
-                width={24}
-                height={24}
+                width={16}
+                height={16}
               />
             </a>
             <a href="https://twitter.com">
               <Image
-                src="/images/Twitter.png"
+                src="/images/TwitterGrey.png"
                 alt="Twitter Logo"
-                width={24}
-                height={24}
+                width={16}
+                height={16}
               />
             </a>
             <a href="https://instagram.com">
               <Image
-                src="/images/Instagram.png"
+                src="/images/InstagramGrey.png"
                 alt="Instagram Logo"
-                width={24}
-                height={24}
+                width={16}
+                height={16}
               />
             </a>
             <a href="https://linkedin.com">
               <Image
-                src="/images/LinkedIn.png"
+                src="/images/LinkedInGrey.png"
                 alt="LinkedIn Logo"
-                width={24}
-                height={24}
+                width={16}
+                height={16}
               />
             </a>
           </div>

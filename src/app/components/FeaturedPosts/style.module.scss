@@ -1,0 +1,81 @@
+.container {
+  margin-top: 128px;
+  margin-left: 80px;
+  margin-bottom: 128px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 32px;
+}
+
+.title {
+  max-width: 669px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.post_wrap {
+  border: 1px solid rgba(109, 110, 118, 0.147);
+  background: rgba(237, 236, 236, 0.309);
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 48px;
+  padding-top: 32px;
+}
+
+.sub_text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.sub_text_span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(255, 208, 80, 1);
+}
+
+.text {
+  max-width: 551px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(109, 110, 118, 0.661);
+}
+
+.title_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(89, 46, 169, 1);
+  padding-right: 80px;
+}
+
+.post_item {
+  cursor: pointer;
+  max-width: 369px;
+  padding: 12px 100px 20px 32px;
+}
+
+.post_item:hover {
+  background: rgba(251, 246, 234, 1);
+}
+
+.item_text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.item_title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}

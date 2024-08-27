@@ -1,0 +1,32 @@
+.container {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 128px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 75px;
+}
+
+.text_wrap {
+  margin-right: 42px;
+}
+
+.sub_text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgba(109, 110, 118, 1);
+
+  margin-bottom: 0;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: rgba(109, 110, 118, 1);
+  margin-top: 0;
+}
