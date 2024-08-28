@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import style from './style.module.scss';
 
-const BlogPostPageMainSection = () => {
+export const BlogPostPageMainSection = () => {
   return (
     <div className={style.container}>
       <div className={style.person_card_wrap}>
@@ -118,5 +118,3 @@ const BlogPostPageMainSection = () => {
     </div>
   );
 };
-
-export default BlogPostPageMainSection;

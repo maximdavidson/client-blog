@@ -1,20 +1,18 @@
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { ContactCard } from './components/ContactCard';
-import { ContactForm } from './components/ContactForm';
+import { PolicyInfo } from './components/PolyceInfo';
 
-const ContactPage = () => {
+const privatePolicyPage = () => {
   return (
     <>
       <ErrorBoundary>
         <Header />
-        <ContactForm />
-        <ContactCard />
+        <PolicyInfo />
         <Footer />
       </ErrorBoundary>
     </>
   );
 };
 
-export default ContactPage;
+export default privatePolicyPage;

@@ -1,5 +1,5 @@
-import Button from '@/UI/Button';
 import Link from 'next/link';
+import Button from '@/UI/Button';
 import style from './style.module.scss';
 
 const JoinUs = () => {

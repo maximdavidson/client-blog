@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import Button from '@/UI/Button';
 import emailjs from '@emailjs/browser';
+import Image from 'next/image';
+import Link from 'next/link';
+import Button from '@/UI/Button';
 import style from './style.module.scss';
 
 export const Footer = () => {

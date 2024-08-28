@@ -9,10 +9,10 @@
   font-weight: 700;
   line-height: 48px;
   letter-spacing: -2px;
-  margin-bottom: 64px;
 }
 
 .collection_grid {
+  margin-top: 64px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 32px;

@@ -1,5 +1,6 @@
-import style from './style.module.scss';
+import Link from 'next/link';
 import { AuthorCard } from './components/AuthorCard';
+import style from './style.module.scss';
 
 const ListOfAuthors = () => {
   const authors = [
@@ -52,17 +53,19 @@ const ListOfAuthors = () => {
   return (
     <div className={style.container}>
       <h1 className={style.title}>List of Authors</h1>
-      <div className={style.cards}>
-        {authors.map((author) => (
-          <AuthorCard
-            key={author.name}
-            avatarSrc={author.avatarSrc}
-            name={author.name}
-            role={author.role}
-            socialLinks={author.socialLinks}
-          />
-        ))}
-      </div>
+      <Link href="authorPage">
+        <div className={style.cards}>
+          {authors.map((author) => (
+            <AuthorCard
+              key={author.name}
+              avatarSrc={author.avatarSrc}
+              name={author.name}
+              role={author.role}
+              socialLinks={author.socialLinks}
+            />
+          ))}
+        </div>
+      </Link>
     </div>
   );
 };

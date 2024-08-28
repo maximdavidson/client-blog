@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Modal } from '../VideoModal';
 import style from './style.module.scss';
+import { Modal } from '../VideoModal';
 
 export const Header = () => {
   const [isModalOpen, setModalOpen] = useState(false);

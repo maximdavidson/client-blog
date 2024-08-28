@@ -1,5 +1,5 @@
-import style from './style.module.scss';
 import Image from 'next/image';
+import style from './style.module.scss';
 
 const FuturedIn = () => {
   return (

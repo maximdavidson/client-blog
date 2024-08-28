@@ -30,9 +30,11 @@ const FeaturedPosts = () => {
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
             cupidatat non proident.
           </p>
-          <Button variant="primary" size="medium" icon={<SlArrowRight />}>
-            Read More
-          </Button>
+          <Link href="blogPostPage">
+            <Button variant="primary" size="medium" icon={<SlArrowRight />}>
+              Read More
+            </Button>
+          </Link>
         </div>
       </div>
 

@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import style from './style.module.scss';
 import { testimonials } from '@/Constants/testimonials';
+import style from './style.module.scss';
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

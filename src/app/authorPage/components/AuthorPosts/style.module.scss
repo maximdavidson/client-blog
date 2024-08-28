@@ -1,0 +1,45 @@
+.container {
+  padding-left: 208px;
+  padding-top: 128px;
+  padding-bottom: 108px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: -2px;
+  margin-bottom: 64px;
+}
+
+.post_card {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.sub_title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 3px;
+  color: rgba(89, 46, 169, 1);
+}
+
+.card_title {
+  max-width: 560px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -2px;
+}
+
+.text {
+  max-width: 580px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(109, 110, 118, 0.661);
+  margin-top: 0px;
+  margin-bottom: 24px;
+}

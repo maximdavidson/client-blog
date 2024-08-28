@@ -1,7 +1,7 @@
-import style from './style.module.scss';
-import Button from '@/UI/Button';
-import { SlArrowRight } from 'react-icons/sl';
 import Image from 'next/image';
+import { SlArrowRight } from 'react-icons/sl';
+import Button from '@/UI/Button';
+import style from './style.module.scss';
 
 const SpecialPost = () => {
   return (

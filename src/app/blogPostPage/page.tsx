@@ -1,9 +1,9 @@
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import JoinUs from '../components/JoinUs';
-import BlogPostPageMainSection from './components/BlogPostPageMainSection';
+import { Header } from '@/components/Header';
 import { BlogCollection } from './components/BlogPostPageCollection';
+import { BlogPostPageMainSection } from './components/BlogPostPageMainSection';
+import JoinUs from '../components/JoinUs';
 
 const BlogPostPage = () => {
   return (

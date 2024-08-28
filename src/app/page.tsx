@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
 
 const HomeHero = dynamic(() => import('./components/HomeHero'), {
   ssr: false,

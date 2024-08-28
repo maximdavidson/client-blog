@@ -1,20 +1,20 @@
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { ContactCard } from './components/ContactCard';
-import { ContactForm } from './components/ContactForm';
+import { AuthorInfo } from './components/AuthorInfo';
+import { AuthorPosts } from './components/AuthorPosts';
 
-const ContactPage = () => {
+const AuthorPage = () => {
   return (
     <>
       <ErrorBoundary>
         <Header />
-        <ContactForm />
-        <ContactCard />
+        <AuthorInfo />
+        <AuthorPosts />
         <Footer />
       </ErrorBoundary>
     </>
   );
 };
 
-export default ContactPage;
+export default AuthorPage;

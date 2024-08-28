@@ -5,29 +5,15 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:prettier/recommended",
-    "prettier",
-    "plugin:storybook/recommended",
-    "plugin:storybook/recommended",
-    "plugin:storybook/recommended"
-  ],
-  "plugins": [
-    "import",
     "prettier"
   ],
+  "plugins": ["import", "prettier"],
   "rules": {
     "prettier/prettier": "error",
     "import/order": [
       "error",
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          [
-            "parent",
-            "sibling"
-          ]
-        ],
+        "groups": ["builtin", "external", "internal", ["parent", "sibling"]],
         "pathGroups": [
           {
             "pattern": "react",
@@ -35,9 +21,7 @@
             "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": [
-          "react"
-        ],
+        "pathGroupsExcludedImportTypes": ["react"],
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true

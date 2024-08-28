@@ -1,37 +1,38 @@
 'use client';
 
-import { useState } from 'react';
-import Button from '@/UI/Button';
+import React, { FC } from 'react';
 import emailjs from '@emailjs/browser';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import Button from '@/UI/Button';
+import { Input } from '@/UI/Input';
+import { schema } from '@/UI/Input/validation';
 import style from './style.module.scss';
 
-export const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    queryRelated: '',
-    message: '',
+interface IFormInput {
+  fullName: string;
+  email: string;
+  queryRelated: string;
+  message: string;
+}
+
+export const ContactForm: FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<IFormInput>({
+    resolver: yupResolver(schema),
   });
 
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >,
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
       const templateParams = {
-        to_email: formData.email,
+        to_email: data.email,
+        full_name: data.fullName,
+        query_related: data.queryRelated,
+        message: data.message,
       };
 
       await emailjs.send(
@@ -41,13 +42,7 @@ export const ContactForm = () => {
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID!,
       );
 
-      setIsSubscribed(true);
-      setFormData({
-        fullName: '',
-        email: '',
-        queryRelated: '',
-        message: '',
-      });
+      reset();
     } catch (error) {
       console.error('Failed to send email:', error);
     }
@@ -79,45 +74,53 @@ export const ContactForm = () => {
           <p className={style.sup_text}>hello@finsweet.com</p>
         </div>
       </div>
-      <form className={style.form} onSubmit={handleSubmit}>
-        <input
+      <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
+        <Input
           type="text"
           name="fullName"
           placeholder="Full Name"
-          value={formData.fullName}
-          onChange={handleChange}
-          required
+          register={register('fullName')}
+          error={errors.fullName?.message}
         />
-        <input
+
+        <Input
           type="email"
           name="email"
           placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
+          register={register('email')}
+          error={errors.email?.message}
         />
-        <select
-          name="queryRelated"
-          value={formData.queryRelated}
-          onChange={handleChange}
-          required
-        >
-          <option value="" disabled>
-            Query Related
-          </option>
-          <option value="support">Support</option>
-          <option value="sales">Sales</option>
-          <option value="other">Other</option>
-        </select>
-        <textarea
+
+        <div className={style.inputWrapper}>
+          <select {...register('queryRelated')} className={style.input}>
+            <option value="" disabled>
+              Query Related
+            </option>
+            <option value="support">Support</option>
+            <option value="sales">Sales</option>
+            <option value="other">Other</option>
+          </select>
+          {errors.queryRelated && (
+            <p className={style.error}>{errors.queryRelated.message}</p>
+          )}
+        </div>
+
+        <Input
+          type="textarea"
           name="message"
           placeholder="Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
+          register={register('message')}
+          error={errors.message?.message}
         />
-        <Button variant="primary" size="large" icon={null} type="submit">
-          {isSubscribed ? 'Done' : 'Subscribe'}
+
+        <Button
+          variant="primary"
+          size="large"
+          icon={null}
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Sending...' : 'Submit'}
         </Button>
       </form>
     </div>
