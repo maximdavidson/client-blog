@@ -1,71 +1,24 @@
 import Link from 'next/link';
+import { authors } from '@/data/authors';
 import { AuthorCard } from './components/AuthorCard';
 import style from './style.module.scss';
 
 const ListOfAuthors = () => {
-  const authors = [
-    {
-      avatarSrc: '/images/Floyd_Miles.png',
-      name: 'Floyd Miles',
-      role: 'Content Writer @Company',
-      socialLinks: [
-        { src: '/images/FaceBook.png', alt: 'FaceBook' },
-        { src: '/images/Twitter.png', alt: 'Twitter' },
-        { src: '/images/Instagram.png', alt: 'Instagram' },
-        { src: '/images/LinkedIn.png', alt: 'LinkedIn' },
-      ],
-    },
-    {
-      avatarSrc: '/images/Dianne_Russell.png',
-      name: 'Dianne Russell',
-      role: 'Content Writer @Company',
-      socialLinks: [
-        { src: '/images/FaceBook.png', alt: 'FaceBook' },
-        { src: '/images/Twitter.png', alt: 'Twitter' },
-        { src: '/images/Instagram.png', alt: 'Instagram' },
-        { src: '/images/LinkedIn.png', alt: 'LinkedIn' },
-      ],
-    },
-    {
-      avatarSrc: '/images/Jenny_Wilson.png',
-      name: 'Jenny Wilson',
-      role: 'Content Writer @Company',
-      socialLinks: [
-        { src: '/images/FaceBook.png', alt: 'FaceBook' },
-        { src: '/images/Twitter.png', alt: 'Twitter' },
-        { src: '/images/Instagram.png', alt: 'Instagram' },
-        { src: '/images/LinkedIn.png', alt: 'LinkedIn' },
-      ],
-    },
-    {
-      avatarSrc: '/images/Leslie_Alexander.png',
-      name: 'Leslie Alexander',
-      role: 'Content Writer @Company',
-      socialLinks: [
-        { src: '/images/FaceBook.png', alt: 'FaceBook' },
-        { src: '/images/Twitter.png', alt: 'Twitter' },
-        { src: '/images/Instagram.png', alt: 'Instagram' },
-        { src: '/images/LinkedIn.png', alt: 'LinkedIn' },
-      ],
-    },
-  ];
-
   return (
     <div className={style.container}>
       <h1 className={style.title}>List of Authors</h1>
-      <Link href="authorPage">
-        <div className={style.cards}>
-          {authors.map((author) => (
+      <div className={style.cards}>
+        {authors.map((author) => (
+          <Link href={`/authorPage/${author.id}`} key={author.id}>
             <AuthorCard
-              key={author.name}
               avatarSrc={author.avatarSrc}
               name={author.name}
               role={author.role}
               socialLinks={author.socialLinks}
             />
-          ))}
-        </div>
-      </Link>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
