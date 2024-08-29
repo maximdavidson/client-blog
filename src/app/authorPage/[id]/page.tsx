@@ -1,4 +1,5 @@
 'use client';
+
 import { useParams } from 'next/navigation';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { Footer } from '@/components/Footer';
@@ -7,9 +8,8 @@ import { authors } from '@/data/authors';
 import { AuthorInfo } from '../components/AuthorInfo';
 import { AuthorPosts } from '../components/AuthorPosts';
 
-const AuthorPage = () => {
-  const params = useParams();
-  const id = params.id;
+const AuthorPage: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
 
   const author = authors.find((author) => author.id === id);
 

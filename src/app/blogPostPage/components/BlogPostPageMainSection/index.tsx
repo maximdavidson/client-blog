@@ -1,14 +1,27 @@
 import Image from 'next/image';
+import { Post } from '@/data/authors';
 import style from './style.module.scss';
 
-export const BlogPostPageMainSection = () => {
+interface BlogPostPageMainSectionProps {
+  post: Post;
+  author: {
+    name: string;
+    avatarSrc: string;
+    role: string;
+  };
+}
+
+export const BlogPostPageMainSection = ({
+  post,
+  author,
+}: BlogPostPageMainSectionProps) => {
   return (
     <div className={style.container}>
       <div className={style.person_card_wrap}>
         <div className={style.person_card}>
           <div className={style.avatar}>
             <Image
-              src="/images/Jonathan_Vallem.png"
+              src={author.avatarSrc}
               alt="Avatar"
               width={48}
               height={48}
@@ -16,13 +29,11 @@ export const BlogPostPageMainSection = () => {
             />
           </div>
           <div className={style.user_info}>
-            <h2 className={style.user_name}>Andrew Jonson</h2>
-            <p className={style.user_date}>Posted on 27th January 2022</p>
+            <h2 className={style.user_name}>{author.name}</h2>{' '}
+            <p className={style.user_date}>Posted on {post.date}</p>
           </div>
         </div>
-        <h1 className={style.title}>
-          Step-by-step guide to choosing great font pairs
-        </h1>
+        <h1 className={style.title}>{post.title}</h1>
         <div className={style.startup_wrap}>
           <Image
             src="/images/startup.png"
@@ -31,16 +42,22 @@ export const BlogPostPageMainSection = () => {
             height={30}
             className={style.startup_icon}
           />
-          <span className={style.startup_text}>Startup</span>
+          <span className={style.startup_text}>{post.category}</span>
         </div>
       </div>
       <Image
-        src="/images/blogPost.png"
-        alt="Avatar"
+        src={post.imageUrl}
+        alt="Post Image"
         width={1280}
         height={582}
         className={style.main_image}
       />
+      <div className={style.text_side}>
+        <div className={style.first_paragraph}>
+          <h1 className={style.text_title}>{post.title}</h1>
+          <p className={style.text}>{post.content}</p>
+        </div>
+      </div>
       <div className={style.text_side}>
         <div className={style.first_paragraph}>
           <h1 className={style.text_title}>

@@ -1,5 +1,6 @@
 .collection {
   margin-left: 80px;
+  margin-right: 80px;
   margin-top: 128px;
   margin-bottom: 128px;
 }
@@ -9,6 +10,16 @@
   font-weight: 700;
   line-height: 48px;
   letter-spacing: -2px;
+  color: rgba(35, 37, 54, 1);
+}
+
+.collection_item {
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.collection_item:hover {
+  background: rgba(251, 246, 234, 1);
 }
 
 .collection_grid {
@@ -39,6 +50,7 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+  color: rgba(35, 37, 54, 1);
 }
 
 .collection_author {

@@ -31,7 +31,7 @@ const HomeHero = () => {
           dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident.
         </p>
-        <Link href="blogPostPage">
+        <Link href="blogPage">
           <Button variant="primary" size="medium" icon={<SlArrowRight />}>
             Read More
           </Button>

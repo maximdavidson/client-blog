@@ -1,11 +1,14 @@
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link';
 import style from './style.module.scss';
 
 interface Post {
-  id: string;
+  id: number;
   title: string;
   category: string;
-  imageSrc: string;
+  imageUrl: string;
 }
 
 interface AuthorPostsProps {
@@ -21,24 +24,26 @@ export const AuthorPosts: React.FC<AuthorPostsProps> = ({ posts }) => {
     <div className={style.container}>
       <h1 className={style.title}>My Posts</h1>
       {posts.map((post) => (
-        <div className={style.post_card} key={post.id}>
-          <div className={style.image_wrap}>
-            <Image
-              src={post.imageSrc}
-              alt={post.title}
-              width={412}
-              height={320}
-            />
+        <Link key={post.id} href={`/blogPostPage/${post.id}`}>
+          <div className={style.post_card} key={post.id}>
+            <div className={style.image_wrap}>
+              <Image
+                src={post.imageUrl}
+                alt={post.title}
+                width={412}
+                height={320}
+              />
+            </div>
+            <div className={style.text_wrap}>
+              <h4 className={style.sub_title}>{post.category}</h4>
+              <h1 className={style.card_title}>{post.title}</h1>
+              <p className={style.text}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
           </div>
-          <div className={style.text_wrap}>
-            <h4 className={style.sub_title}>{post.category}</h4>
-            <h1 className={style.card_title}>{post.title}</h1>
-            <p className={style.text}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
