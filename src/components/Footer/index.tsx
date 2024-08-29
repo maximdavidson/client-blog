@@ -45,9 +45,9 @@ export const Footer = () => {
           <div className={style.navigate_wrap}>
             <nav className={style.navigation}>
               <Link href="/">Home</Link>
-              <Link href="blog">Blog</Link>
+              <Link href="/blogPage">Blog</Link>
               <Link href="about">About Us</Link>
-              <Link href="contactPage">Contact Us</Link>
+              <Link href="/contactPage">Contact Us</Link>
               <Link href="privacy-policy">Privacy Policy</Link>
             </nav>
           </div>
