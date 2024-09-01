@@ -1,12 +1,12 @@
 'use client';
 
 import React, { FC } from 'react';
-import emailjs from '@emailjs/browser';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import Button from '@/UI/Button';
 import { Input } from '@/UI/Input';
 import { schema } from '@/UI/Input/validation';
+import { sendEmail } from '@/utils/sendEmail';
 import style from './style.module.scss';
 
 interface IFormInput {
@@ -35,19 +35,13 @@ export const ContactForm: FC = () => {
         message: data.message,
       };
 
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID!,
-      );
+      await sendEmail(templateParams);
 
       reset();
     } catch (error) {
       console.error('Failed to send email:', error);
     }
   };
-
   return (
     <div className={style.container}>
       <div className={style.text_wrapper}>

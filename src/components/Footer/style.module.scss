@@ -36,6 +36,17 @@
     }
   }
 
+  .language_switch {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 22px;
+    font-weight: 600;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
   .subscription {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

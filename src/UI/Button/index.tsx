@@ -1,6 +1,6 @@
 import { SlArrowRight } from 'react-icons/sl';
 import buttonVariants from './buttonVariants';
-import styles from './style.module.scss';
+import style from './style.module.scss';
 import { ButtonProps } from './types';
 
 const Button = ({
@@ -9,13 +9,13 @@ const Button = ({
   type = 'button',
   disabled = false,
   dataCy = '',
-  icon = <SlArrowRight className={styles.icon} />,
+  icon = <SlArrowRight className={style.icon} />,
   children,
   onClick,
 }: ButtonProps) => {
-  const variantClass = styles[buttonVariants[variant]];
-  const sizeClass = styles[size];
-  const className = `${styles.button} ${variantClass} ${sizeClass}`;
+  const variantClass = style[buttonVariants[variant]];
+  const sizeClass = style[size];
+  const className = `${style.button} ${variantClass} ${sizeClass}`;
 
   return (
     <button
@@ -25,9 +25,9 @@ const Button = ({
       disabled={disabled}
       data-cy={dataCy}
     >
-      <span className={styles.content}>
+      <span className={style.content}>
         {children}
-        {icon && <span className={styles.iconWrapper}>{icon}</span>}{' '}
+        {icon && <span className={style.iconWrapper}>{icon}</span>}{' '}
       </span>
     </button>
   );

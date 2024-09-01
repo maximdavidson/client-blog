@@ -59,9 +59,9 @@ const FeaturedPosts = () => {
           <div className={style.all_wrap}>
             <div className={style.title_wrap}>
               <h1 className={style.title}>All Post</h1>
-              <a className={style.link} href="#!">
+              <Link className={style.link} href="/blogPage">
                 View All
-              </a>
+              </Link>
             </div>
             <div className={style.post_item}>
               <p className={style.item_text}>

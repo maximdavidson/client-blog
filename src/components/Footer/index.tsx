@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/UI/Button';
+import { sendEmail } from '@/utils/sendEmail';
 import style from './style.module.scss';
 
 export const Footer = () => {
@@ -23,12 +23,7 @@ export const Footer = () => {
         to_email: email,
       };
 
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID!,
-      );
+      await sendEmail(templateParams);
 
       setIsSubscribed(true);
       setEmail('');
@@ -48,8 +43,9 @@ export const Footer = () => {
               <Link href="/blogPage">Blog</Link>
               <Link href="about">About Us</Link>
               <Link href="/contactPage">Contact Us</Link>
-              <Link href="privacy-policy">Privacy Policy</Link>
+              <Link href="/privatePolicyPage">Privacy Policy</Link>
             </nav>
+            <p className={style.language_switch}>EN</p>
           </div>
         </div>
 
