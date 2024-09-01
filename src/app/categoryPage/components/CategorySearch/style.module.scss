@@ -9,7 +9,7 @@
 }
 
 .searchInput {
-  max-width: 270px;
+  max-width: 220px;
   min-height: 54px;
   padding-left: 25px;
   border: 1px solid #ccc;
@@ -18,6 +18,7 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 24px;
+  border-radius: 8px;
 
   &::placeholder {
     color: rgba(41, 45, 51, 1);
@@ -29,7 +30,7 @@
   color: white;
   border: none;
   padding: 17px 18px;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
@@ -41,4 +42,74 @@
 
 .searchButton:hover {
   background-color: #e0b030;
+}
+
+.item_container {
+  margin-top: 58px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item_container_titles {
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -2px;
+}
+
+.search_item {
+  max-width: 296px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(109, 110, 118, 0.467);
+  margin-bottom: 24px;
+  padding-left: 24px;
+  cursor: pointer;
+}
+
+.ico {
+  background: rgba(251, 246, 234, 1);
+  border-radius: 8px;
+}
+
+.search_item:hover {
+  background: rgba(255, 208, 80, 1);
+  border: none;
+}
+
+.item_title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -1px;
+}
+
+.tags {
+  padding: 16px;
+}
+
+.tags_item {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.tags_list {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  border: 2px solid rgba(109, 110, 118, 0.6);
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  &:hover {
+    background: rgba(109, 110, 118, 0.342);
+  }
 }
