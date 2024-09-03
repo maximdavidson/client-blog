@@ -1,12 +1,6 @@
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 32px;
-}
-
 .card {
   cursor: pointer;
-  border: 1px solid rgba(109, 110, 118, 0.467);
+  border: 1px solid rgba(109, 110, 118, 0.17);
 
   .ico {
     background: rgba(251, 246, 234, 1);
@@ -33,9 +27,8 @@
     padding-left: 32px;
     margin-top: 32px;
   }
-}
 
-.card:hover {
-  background: rgba(255, 208, 80, 1);
-  border: none;
+  &:hover {
+    background: rgba(255, 208, 80, 1);
+  }
 }

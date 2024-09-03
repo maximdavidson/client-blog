@@ -1,22 +1,17 @@
 'use client';
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { authors } from '@/data/authors';
+import { Post } from '@/data/authors';
 import style from './style.module.scss';
 
-const allPosts = authors.flatMap((author) => author.posts);
+interface MainOfCategoryProps {
+  posts: Post[];
+}
 
-export const MainOfCategory = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const postsPerPage = 5;
-  const startIndex = (currentPage - 1) * postsPerPage;
-  const currentPosts = allPosts.slice(startIndex, startIndex + postsPerPage);
-
+export const MainOfCategory = ({ posts }: MainOfCategoryProps) => {
   return (
     <div className={style.container}>
-      {currentPosts.map((post) => (
+      {posts.map((post) => (
         <Link href={`/blogPostPage/${post.id}`} key={post.id}>
           <div className={style.post_card}>
             <div className={style.image_wrap}>

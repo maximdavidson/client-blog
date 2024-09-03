@@ -47,14 +47,14 @@ export const authors = [
       {
         id: 6,
         title: 'How to build rapport with your web design clients',
-        subtitle: 'BUSINESS',
+        subtitle: 'EXPERIENCE',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_2.png',
         avatarUrl: '/images/Floyd_Miles.jpg',
         author: 'Floyd Miles',
         date: 'March 12, 2022',
-        category: 'Business',
+        category: 'Experience',
       },
       {
         id: 1,
@@ -95,14 +95,14 @@ export const authors = [
       {
         id: 3,
         title: 'Logo design trends to avoid in 2022',
-        subtitle: 'Startup',
+        subtitle: 'SCREEN',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_3.png',
         avatarUrl: '/images/Jenny_Wilson.jpg',
         author: 'Jenny Wilson',
         date: 'June 10, 2022',
-        category: 'Design',
+        category: 'Screen',
       },
       {
         id: 4,
@@ -156,26 +156,26 @@ export const authors = [
       {
         id: 7,
         title: 'Design tips for designers that cover everything you need',
-        subtitle: 'Startup',
+        subtitle: 'LIFE',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_1.png',
         avatarUrl: '/images/Leslie_Alexander.jpg',
         author: 'Leslie Alexander',
         date: 'May 20, 2022',
-        category: 'Design',
+        category: 'Life',
       },
       {
         id: 9,
         title: '8 Figma design systems you can download for free today',
-        subtitle: 'TECHNOLOGY',
+        subtitle: 'MARKETING',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_4.png',
         avatarUrl: '/images/Leslie_Alexander.jpg',
         author: 'Leslie Alexander',
         date: 'November 2, 2022',
-        category: 'Technology',
+        category: 'Marketing',
       },
       {
         id: 10,
@@ -187,7 +187,7 @@ export const authors = [
         avatarUrl: '/images/Leslie_Alexander.jpg',
         author: 'Leslie Alexander',
         date: 'April 14, 2022',
-        category: 'Design',
+        category: 'Startup',
       },
     ],
   },

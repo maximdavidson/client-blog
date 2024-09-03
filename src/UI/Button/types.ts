@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export type ButtonProps = {
   variant: 'primary' | 'secondary' | 'outline' | 'text';
-  size?: 'small' | 'medium' | 'large' | 'without';
+  size?: 'small' | 'medium' | 'large' | 'without' | 'mediumSearch';
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   className?: string;
