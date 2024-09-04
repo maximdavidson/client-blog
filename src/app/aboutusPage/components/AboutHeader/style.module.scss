@@ -8,12 +8,11 @@
 
 .about_head {
   position: absolute;
-  top: -380px; /* Смещение блока вверх на 50px */
-  left: 0;
+  top: -380px;
+  left: 109px;
   right: 0;
   margin: 0 auto;
-
-  padding-left: 120px;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 32px;
@@ -50,44 +49,56 @@
 }
 
 .poster_wrap {
-  // ваши стили для обертки постера
+  position: relative;
 }
 
 .poster {
-  // ваши стили для постера
 }
 
 .info_in_poster_wrap {
-  // ваши стили для обертки информации в постере
+  position: absolute;
+  bottom: 4px;
+  left: 109px;
+  right: 0;
 }
 
 .text_in_poster {
-  // ваши стили для текста в постере
-}
-
-.stat {
-  // ваши стили для статистики
+  max-width: 630px;
+  background: rgba(255, 208, 80, 1);
+  padding-left: 48px;
+  display: flex;
+  gap: 68px;
 }
 
 .statNumber {
-  // ваши стили для номера статистики
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: -2px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .statLabel {
-  // ваши стили для метки статистики
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
 }
 
-// .stripe {
-//   position: absolute;
-//   bottom: 0;
-//   left: 208px;
-//   width: 1024px;
-//   height: 23px;
-//   background: linear-gradient(to right, #ffd700 70%, #6a0dad 70%);
-// }
+.stripe {
+  width: 861px;
+  height: 23px;
+  background: linear-gradient(to left, #ffd700 70%, #6a0dad 70%);
+}
 
 .text_under_poster {
-  // ваши стили для текста под постером
+  background: rgba(244, 240, 248, 1);
+  padding: 108px 108px 64px 108px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 32px;
+  margin-top: -3px;
 }
 
 .left_side {
@@ -99,9 +110,10 @@
 }
 
 .text_under_post_title {
-  // ваши стили для заголовка текста под постом
-}
-
-.text {
-  // ваши стили для текста
+  max-width: 481px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -1px;
+  text-align: left;
 }
