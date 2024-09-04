@@ -1,0 +1,107 @@
+.container {
+  margin: 450px 80px 128px 80px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.about_head {
+  position: absolute;
+  top: -380px; /* Смещение блока вверх на 50px */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  padding-left: 120px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.head_card {
+  background: rgba(255, 255, 255, 1);
+  padding: 64px;
+}
+
+.sub_title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 3px;
+}
+
+.card_title {
+  max-width: 496px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: -2px;
+}
+
+.text {
+  max-width: 477px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(109, 110, 118, 0.661);
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+
+.poster_wrap {
+  // ваши стили для обертки постера
+}
+
+.poster {
+  // ваши стили для постера
+}
+
+.info_in_poster_wrap {
+  // ваши стили для обертки информации в постере
+}
+
+.text_in_poster {
+  // ваши стили для текста в постере
+}
+
+.stat {
+  // ваши стили для статистики
+}
+
+.statNumber {
+  // ваши стили для номера статистики
+}
+
+.statLabel {
+  // ваши стили для метки статистики
+}
+
+// .stripe {
+//   position: absolute;
+//   bottom: 0;
+//   left: 208px;
+//   width: 1024px;
+//   height: 23px;
+//   background: linear-gradient(to right, #ffd700 70%, #6a0dad 70%);
+// }
+
+.text_under_poster {
+  // ваши стили для текста под постером
+}
+
+.left_side {
+  // ваши стили для левой стороны
+}
+
+.right_side {
+  // ваши стили для правой стороны
+}
+
+.text_under_post_title {
+  // ваши стили для заголовка текста под постом
+}
+
+.text {
+  // ваши стили для текста
+}
