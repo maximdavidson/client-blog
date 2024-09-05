@@ -191,4 +191,99 @@ export const authors = [
       },
     ],
   },
+  {
+    id: 'guy-hawkins',
+    avatarSrc: '/images/Guy_Hawkins.png',
+    name: 'Guy Hawkins',
+    role: 'Content Writer @Company',
+    socialLinks: [
+      { src: '/images/Twitter.png', alt: 'Twitter' },
+      { src: '/images/Instagram.png', alt: 'Instagram' },
+      { src: '/images/LinkedIn.png', alt: 'LinkedIn' },
+    ],
+    posts: [
+      {
+        id: 9,
+        title: '8 Figma design systems you can download for free today',
+        subtitle: 'MARKETING',
+        content:
+          'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+        imageUrl: '/images/collection_image_4.png',
+        avatarUrl: '/images/Leslie_Alexander.jpg',
+        author: 'Guy Hawkins',
+        date: 'November 2, 2022',
+        category: 'Marketing',
+      },
+    ],
+  },
+  {
+    id: 'eleanor_pena',
+    avatarSrc: '/images/Eleanor_Pena.png',
+    name: 'Eleanor Pena',
+    role: 'Content Writer @Company',
+    socialLinks: [
+      { src: '/images/Twitter.png', alt: 'Twitter' },
+      { src: '/images/LinkedIn.png', alt: 'LinkedIn' },
+    ],
+    posts: [
+      {
+        id: 9,
+        title: '8 Figma design systems you can download for free today',
+        subtitle: 'MARKETING',
+        content:
+          'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+        imageUrl: '/images/collection_image_4.png',
+        avatarUrl: '/images/Leslie_Alexander.jpg',
+        author: 'Guy Hawkins',
+        date: 'November 2, 2022',
+        category: 'Marketing',
+      },
+    ],
+  },
+  {
+    id: 'robert_fox',
+    avatarSrc: '/images/Robert_Fox.jpg',
+    name: 'Robert Fox',
+    role: 'Content Writer @Company',
+    socialLinks: [
+      { src: '/images/Twitter.png', alt: 'Twitter' },
+      { src: '/images/Instagram.png', alt: 'Instagram' },
+      { src: '/images/LinkedIn.png', alt: 'LinkedIn' },
+    ],
+    posts: [
+      {
+        id: 9,
+        title: '8 Figma design systems you can download for free today',
+        subtitle: 'MARKETING',
+        content:
+          'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+        imageUrl: '/images/collection_image_4.png',
+        avatarUrl: '/images/Leslie_Alexander.jpg',
+        author: 'Guy Hawkins',
+        date: 'November 2, 2022',
+        category: 'Marketing',
+      },
+    ],
+  },
+  {
+    id: 'jacob_jones',
+    avatarSrc: '/images/Jacob_Jones.jpg',
+    name: 'Jacob Jones',
+    role: 'Content Writer @Company',
+    socialLinks: [{ src: '/images/Twitter.png', alt: 'Twitter' }],
+    posts: [
+      {
+        id: 9,
+        title: '8 Figma design systems you can download for free today',
+        subtitle: 'MARKETING',
+        content:
+          'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+        imageUrl: '/images/collection_image_4.png',
+        avatarUrl: '/images/Leslie_Alexander.jpg',
+        author: 'Guy Hawkins',
+        date: 'November 2, 2022',
+        category: 'Marketing',
+      },
+    ],
+  },
 ];

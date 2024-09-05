@@ -41,7 +41,7 @@ export const Footer = () => {
             <nav className={style.navigation}>
               <Link href="/">Home</Link>
               <Link href="/blogPage">Blog</Link>
-              <Link href="about">About Us</Link>
+              <Link href="/aboutusPage">About Us</Link>
               <Link href="/contactPage">Contact Us</Link>
               <Link href="/privatePolicyPage">Privacy Policy</Link>
             </nav>

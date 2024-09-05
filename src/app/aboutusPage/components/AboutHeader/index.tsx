@@ -74,6 +74,59 @@ export const AboutHeader = () => {
           </p>
         </div>
       </div>
+
+      <div className={style.text_card_wrap}>
+        <div className={style.top_card}>
+          <div className={style.text_side}>
+            <h1 className={style.text_card_title}>Our team of creatives</h1>
+            <h3 className={style.text_card_subtitle}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt.
+            </h3>
+            <p className={style.text}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+            </p>
+          </div>
+          <div className={style.image_side}>
+            <Image
+              src="/images/hands.png"
+              alt="About Us Hands Background"
+              width={624}
+              height={480}
+            />
+            <div className={style.shape}></div>
+          </div>
+        </div>
+        <div className={style.down_card}>
+          <div className={style.image_side}>
+            <Image
+              src="/images/people.png"
+              alt="About Us Hands Background"
+              width={624}
+              height={480}
+            />
+            <div className={style.circle}></div>
+          </div>
+          <div className={style.text_side}>
+            <h1 className={style.text_card_title}>Why we started this Blog</h1>
+            <h3 className={style.text_card_subtitle}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt.
+            </h3>
+            <p className={style.text}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
