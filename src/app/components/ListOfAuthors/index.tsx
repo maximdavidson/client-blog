@@ -25,7 +25,7 @@ const ListOfAuthors = () => {
         <>
           <h1 className={style.title}>List of Authors</h1>
           <div className={style.cards}>
-            {authors.map((author) => (
+            {authors.slice(0, 4).map((author) => (
               <Link href={`/authorPage/${author.id}`} key={author.id}>
                 <AuthorCard
                   avatarSrc={author.avatarSrc}

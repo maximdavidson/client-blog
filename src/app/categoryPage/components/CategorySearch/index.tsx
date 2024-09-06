@@ -13,18 +13,21 @@ interface Category {
 interface CategorySearchProps {
   categories: Category[];
   tags: string[];
+  onCategorySelect: (category: string) => void;
   onTagSelect: (tag: string) => void;
 }
 
 export const CategorySearch = ({
   categories,
   tags,
+  onCategorySelect,
   onTagSelect,
 }: CategorySearchProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredResults, setFilteredResults] = useState<string[]>([]);
   const [searchError, setSearchError] = useState('');
   const router = useRouter();
+  const [activeTag, setActiveTag] = useState<string | null>(null);
 
   useEffect(() => {
     const allItems = [...categories.map((category) => category.title), ...tags];
@@ -53,11 +56,12 @@ export const CategorySearch = ({
       if (
         categories.some(
           (category) => category.title.toLowerCase() === lowerSearchTerm,
-        ) ||
-        tags.some((tag) => tag.toLowerCase() === lowerSearchTerm)
+        )
       ) {
-        onTagSelect(searchTerm);
+        onCategorySelect(searchTerm);
         router.push(`/categoryPage/${searchTerm}`);
+      } else if (tags.some((tag) => tag.toLowerCase() === lowerSearchTerm)) {
+        onTagSelect(searchTerm);
       } else {
         setSearchError('No matching results found.');
       }
@@ -69,10 +73,24 @@ export const CategorySearch = ({
   };
 
   const handleTagClick = (tag: string) => {
-    setSearchTerm(tag);
     onTagSelect(tag);
   };
 
+  const handleCategoryClick = (category: string) => {
+    onCategorySelect(category);
+    router.push(`/categoryPage/${category}`);
+  };
+
+  const handleResultOwnClick = (result: string) => () =>
+    handleResultClick(result);
+
+  const handleCategoryOwnClick = (category: string) => () =>
+    handleCategoryClick(category);
+
+  const handleTagOwnClick = (tag: string) => () => {
+    handleTagClick(tag);
+    setActiveTag(tag);
+  };
   return (
     <div className={style.container}>
       <div className={style.search_container}>
@@ -99,7 +117,7 @@ export const CategorySearch = ({
             <div
               key={result}
               className={style.filtered_item}
-              onClick={() => handleResultClick(result)}
+              onClick={handleResultOwnClick(result)}
             >
               {result}
             </div>
@@ -112,7 +130,7 @@ export const CategorySearch = ({
           <div
             key={category.title}
             className={style.search_item}
-            onClick={() => handleTagClick(category.title)}
+            onClick={handleCategoryOwnClick(category.title)}
           >
             <Image
               src={category.iconSrc}
@@ -131,8 +149,8 @@ export const CategorySearch = ({
           {tags.map((tag) => (
             <span
               key={tag}
-              className={style.tag}
-              onClick={() => handleTagClick(tag)}
+              className={`${style.tag} ${activeTag === tag ? style.activeTag : ''}`}
+              onClick={handleTagOwnClick(tag)}
             >
               {tag}
             </span>

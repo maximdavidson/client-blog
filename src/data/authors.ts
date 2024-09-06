@@ -8,6 +8,7 @@ export interface Post {
   author: string;
   date: string;
   category: string;
+  tags?: string[];
 }
 
 export interface Author {
@@ -42,31 +43,34 @@ export const authors = [
         avatarUrl: '/images/Floyd_Miles.jpg',
         author: 'Floyd Miles',
         date: 'August 23, 2021',
-        category: 'Business',
+        category: 'BUSINESS',
+        tags: ['business', 'experience', 'marketing'],
       },
       {
         id: 6,
         title: 'How to build rapport with your web design clients',
-        subtitle: 'EXPERIENCE',
+        subtitle: 'ECONOMY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_2.png',
         avatarUrl: '/images/Floyd_Miles.jpg',
         author: 'Floyd Miles',
         date: 'March 12, 2022',
-        category: 'Experience',
+        category: 'ECONOMY',
+        tags: ['business', 'experience'],
       },
       {
         id: 1,
         title: 'Design tips for designers that cover everything you need',
-        subtitle: 'Startup',
+        subtitle: 'STARTUP',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_1.png',
         avatarUrl: '/images/Floyd_Miles.jpg',
         author: 'Floyd Miles',
         date: 'January 27, 2022',
-        category: 'Design',
+        category: 'STARTUP',
+        tags: ['experience'],
       },
     ],
   },
@@ -95,14 +99,15 @@ export const authors = [
       {
         id: 3,
         title: 'Logo design trends to avoid in 2022',
-        subtitle: 'SCREEN',
+        subtitle: 'TECHNOLOGY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_3.png',
         avatarUrl: '/images/Jenny_Wilson.jpg',
         author: 'Jenny Wilson',
         date: 'June 10, 2022',
-        category: 'Screen',
+        category: 'TECHNOLOGY',
+        tags: ['technology'],
       },
       {
         id: 4,
@@ -114,7 +119,8 @@ export const authors = [
         avatarUrl: '/images/Jenny_Wilson.jpg',
         author: 'Jenny Wilson',
         date: 'September 15, 2021',
-        category: 'Technology',
+        category: 'TECHNOLOGY',
+        tags: ['technology', 'screen'],
       },
       {
         id: 5,
@@ -126,7 +132,8 @@ export const authors = [
         avatarUrl: '/images/Jenny_Wilson.jpg',
         author: 'Jenny Wilson',
         date: 'July 5, 2022',
-        category: 'Economy',
+        category: 'ECONOMY',
+        tags: ['business'],
       },
       {
         id: 8,
@@ -134,11 +141,12 @@ export const authors = [
         subtitle: 'ECONOMY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-        imageUrl: '/images/collection_image_1.png',
+        imageUrl: '/images/collection_image_2.png',
         avatarUrl: '/images/Jenny_Wilson.jpg',
         author: 'Jenny Wilson',
         date: 'October 18, 2021',
-        category: 'Economy',
+        category: 'ECONOMY',
+        tags: ['business', 'experience'],
       },
     ],
   },
@@ -156,38 +164,40 @@ export const authors = [
       {
         id: 7,
         title: 'Design tips for designers that cover everything you need',
-        subtitle: 'LIFE',
+        subtitle: 'STARTUP',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_1.png',
         avatarUrl: '/images/Leslie_Alexander.jpg',
         author: 'Leslie Alexander',
         date: 'May 20, 2022',
-        category: 'Life',
+        category: 'STARTUP',
+        tags: ['life', 'experience'],
       },
       {
         id: 9,
         title: '8 Figma design systems you can download for free today',
-        subtitle: 'MARKETING',
+        subtitle: 'BUSINESS',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_4.png',
         avatarUrl: '/images/Leslie_Alexander.jpg',
         author: 'Leslie Alexander',
         date: 'November 2, 2022',
-        category: 'Marketing',
+        category: 'BUSINESS',
+        tags: ['business', 'experience'],
       },
       {
         id: 10,
         title: 'Logo design trends to avoid in 2022',
-        subtitle: 'Startup',
+        subtitle: 'STARTUP',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_3.png',
         avatarUrl: '/images/Leslie_Alexander.jpg',
         author: 'Leslie Alexander',
         date: 'April 14, 2022',
-        category: 'Startup',
+        category: 'STARTUP',
       },
     ],
   },
@@ -201,20 +211,7 @@ export const authors = [
       { src: '/images/Instagram.png', alt: 'Instagram' },
       { src: '/images/LinkedIn.png', alt: 'LinkedIn' },
     ],
-    posts: [
-      {
-        id: 9,
-        title: '8 Figma design systems you can download for free today',
-        subtitle: 'MARKETING',
-        content:
-          'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-        imageUrl: '/images/collection_image_4.png',
-        avatarUrl: '/images/Leslie_Alexander.jpg',
-        author: 'Guy Hawkins',
-        date: 'November 2, 2022',
-        category: 'Marketing',
-      },
-    ],
+    posts: [],
   },
   {
     id: 'eleanor_pena',
@@ -227,16 +224,17 @@ export const authors = [
     ],
     posts: [
       {
-        id: 9,
+        id: 11,
         title: '8 Figma design systems you can download for free today',
-        subtitle: 'MARKETING',
+        subtitle: 'STARTUP',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_4.png',
         avatarUrl: '/images/Leslie_Alexander.jpg',
         author: 'Guy Hawkins',
-        date: 'November 2, 2022',
-        category: 'Marketing',
+        date: 'December 4, 2024',
+        category: 'STARTUP',
+        tags: ['screen', 'experience'],
       },
     ],
   },
@@ -250,20 +248,7 @@ export const authors = [
       { src: '/images/Instagram.png', alt: 'Instagram' },
       { src: '/images/LinkedIn.png', alt: 'LinkedIn' },
     ],
-    posts: [
-      {
-        id: 9,
-        title: '8 Figma design systems you can download for free today',
-        subtitle: 'MARKETING',
-        content:
-          'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-        imageUrl: '/images/collection_image_4.png',
-        avatarUrl: '/images/Leslie_Alexander.jpg',
-        author: 'Guy Hawkins',
-        date: 'November 2, 2022',
-        category: 'Marketing',
-      },
-    ],
+    posts: [],
   },
   {
     id: 'jacob_jones',
@@ -273,16 +258,17 @@ export const authors = [
     socialLinks: [{ src: '/images/Twitter.png', alt: 'Twitter' }],
     posts: [
       {
-        id: 9,
+        id: 12,
         title: '8 Figma design systems you can download for free today',
-        subtitle: 'MARKETING',
+        subtitle: 'TECHNOLOGY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
         imageUrl: '/images/collection_image_4.png',
         avatarUrl: '/images/Leslie_Alexander.jpg',
         author: 'Guy Hawkins',
         date: 'November 2, 2022',
-        category: 'Marketing',
+        category: 'TECHNOLOGY',
+        tags: ['technology', 'experience'],
       },
     ],
   },

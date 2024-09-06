@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { Footer } from '@/components/Footer';
@@ -7,15 +6,21 @@ import { Header } from '@/components/Header';
 import { categories } from '@/constants/categories';
 import { tags } from '@/constants/tags';
 import { Post, authors } from '@/data/authors';
-import { CategoryHeader } from '../components/CategoryHeader';
+import { CategoryHeader } from '../components/categoryHeader';
 import { CategorySearch } from '../components/CategorySearch';
 import { MainOfCategory } from '../components/MainInCategory';
 import style from '../page.module.scss';
 
-const getPostsByCategory = (category: string): Post[] => {
+const getPostsByCategoryAndTag = (category: string, tag?: string): Post[] => {
   return authors
     .flatMap((author) => author.posts)
-    .filter((post) => post.category.toLowerCase() === category.toLowerCase());
+    .filter(
+      (post) =>
+        post.category.toLowerCase() === category.toLowerCase() &&
+        (!tag ||
+          (post.tags &&
+            post.tags.some((t) => t.toLowerCase() === tag.toLowerCase()))),
+    );
 };
 
 interface CategoryPageProps {
@@ -27,11 +32,23 @@ interface CategoryPageProps {
 const CategoryPage = ({ params }: CategoryPageProps) => {
   const { category } = params;
   const [posts, setPosts] = useState<Post[]>([]);
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchedPosts = getPostsByCategory(category);
+    const fetchedPosts = getPostsByCategoryAndTag(
+      category,
+      selectedTag || undefined,
+    );
     setPosts(fetchedPosts.length > 0 ? fetchedPosts : []);
-  }, [category]);
+  }, [category, selectedTag]);
+
+  const handleTagSelect = (tag: string) => {
+    setSelectedTag(tag);
+  };
+
+  const handleCategorySelect = (selectedCategory: string) => {
+    setSelectedTag(null);
+  };
 
   return (
     <>
@@ -43,7 +60,8 @@ const CategoryPage = ({ params }: CategoryPageProps) => {
           <CategorySearch
             categories={categories}
             tags={tags}
-            onTagSelect={(tag) => setPosts(getPostsByCategory(tag))}
+            onCategorySelect={handleCategorySelect}
+            onTagSelect={handleTagSelect}
           />
         </div>
         <Footer />

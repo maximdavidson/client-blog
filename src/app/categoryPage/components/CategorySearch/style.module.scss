@@ -59,6 +59,10 @@
   background: rgba(255, 208, 80, 1);
 }
 
+.activeCard {
+  background: rgba(255, 208, 80, 1);
+}
+
 .item_title {
   font-size: 28px;
   font-weight: 700;
@@ -94,6 +98,10 @@
   &:hover {
     background: rgba(109, 110, 118, 0.342);
   }
+}
+
+.activeTag {
+  background: rgba(109, 110, 118, 0.342);
 }
 
 .filtered_container {

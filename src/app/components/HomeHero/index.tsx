@@ -48,7 +48,7 @@ const HomeHero = () => {
               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
               cupidatat non proident.
             </p>
-            <Link href="blogPage">
+            <Link href="8">
               <Button variant="primary" size="medium" icon={<SlArrowRight />}>
                 Read More
               </Button>
