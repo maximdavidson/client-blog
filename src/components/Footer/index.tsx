@@ -1,15 +1,24 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useTransition } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
+import { locales } from '@/constants/locales';
+import { Routes } from '@/constants/routes';
+import { useRouter, usePathname } from '@/navigation';
 import Button from '@/UI/Button';
 import { sendEmail } from '@/utils/sendEmail';
 import style from './style.module.scss';
 
 export const Footer = () => {
+  const t = useTranslations();
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = useLocale();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -32,32 +41,50 @@ export const Footer = () => {
     }
   };
 
+  const handleUpdateLanguage = (locale: string) => () => {
+    startTransition(() => {
+      router.replace({ pathname }, { locale });
+    });
+  };
+
   return (
     <footer className={style.footer}>
       <div className={style.container}>
         <div className={style.wrap}>
-          <h1 className={style.title}>Modsen Client Blog</h1>
+          <h1 className={style.title}>{t('Logo.title')}</h1>
           <div className={style.navigate_wrap}>
             <nav className={style.navigation}>
-              <Link href="/">Home</Link>
-              <Link href="/blogPage">Blog</Link>
-              <Link href="/aboutusPage">About Us</Link>
-              <Link href="/contactPage">Contact Us</Link>
-              <Link href="/privatePolicyPage">Privacy Policy</Link>
+              <Link href={Routes.Home}>{t('Navbar.home')}</Link>
+              <Link href={Routes.Blog}>{t('Navbar.blog')}</Link>
+              <Link href={Routes.AboutUs}>{t('Navbar.about_us')}</Link>
+              <Link href={Routes.ContactUs}>{t('Navbar.contact_us')}</Link>
+              <Link href={Routes.PrivacyPolicy}>
+                {t('Navbar.privacy_policy')}
+              </Link>
             </nav>
-            <p className={style.language_switch}>EN</p>
+            <div className={style.language_switch}>
+              {locales.map((locale) => (
+                <button
+                  key={locale}
+                  type="button"
+                  className={style.switcher_btn}
+                  disabled={currentLocale === locale || isPending}
+                  onClick={handleUpdateLanguage(locale)}
+                >
+                  {locale.toUpperCase()}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className={style.subscription}>
-          <h2 className={style.sub_text}>
-            Subscribe to our newsletter to get the latest updates and news
-          </h2>
+          <h2 className={style.sub_text}>{t('SubscribeForm.title')}</h2>
           <form className={style.inputWrapper} onSubmit={handleSubscribe}>
             <input
               className={style.input}
               type="email"
-              placeholder="Enter Your Email"
+              placeholder={t('SubscribeForm.placeholder')}
               value={email}
               onChange={handleInputChange}
               required

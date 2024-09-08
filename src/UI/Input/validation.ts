@@ -10,8 +10,4 @@ export const schema = yup.object().shape({
     .email('Invalid email format')
     .required('Email is required'),
   queryRelated: yup.string().required('Please select a query type'),
-  message: yup
-    .string()
-    .required('Message is required')
-    .min(10, 'Message must be at least 10 characters'),
 });
