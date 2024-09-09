@@ -64,9 +64,10 @@
   },
   "BlogPosts": {
     "title": "All posts",
+    "subtitle_header": "Featured Post",
     "Pagination": {
-      "btn_title_prev": "< Prev",
-      "btn_title_next": "Next >"
+      "btn_title_prev": "Prev",
+      "btn_title_next": "Next"
     }
   },
   "BlogPost": {
@@ -76,7 +77,10 @@
   "AuthorPage": {
     "hello": "Hey there, I’m",
     "welcome": "and welcome to my Blog",
-    "title": "My Posts"
+    "title": "My Posts",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus",
+    "small_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "no_result": "No posts available."
   },
   "ContactsUs": {
     "Heading": {
@@ -117,8 +121,8 @@
 
   "AboutUs": {
     "Heading": {
-      "title": "We are a team of content writers who share their learnings",
       "subtitle": "ABOUT US",
+      "title": "We are a team of content writers who share their learnings",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     "Overview": {
@@ -146,6 +150,7 @@
   "Category": {
     "categoriesTitle": "Categories",
     "tagsTitle": "All Tags",
+    "no_post_found": " No posts found for the selected tag. Try Another!",
     "Input": {
       "placeholder": "Search for tag...",
       "btn_title": "Search"
@@ -162,11 +167,5 @@
       "title_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
       "description_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."
     }
-  },
-  "Categories": {
-    "business": "Business",
-    "startup": "Startup",
-    "economy": "Economy",
-    "technology": "Technology"
   }
 }

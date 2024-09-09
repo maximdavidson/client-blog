@@ -1,7 +1,8 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Post } from '@/data/authors';
+import { Link } from '@/navigation';
 import style from './style.module.scss';
 
 interface MainOfCategoryProps {
@@ -9,6 +10,7 @@ interface MainOfCategoryProps {
 }
 
 export const MainOfCategory = ({ posts }: MainOfCategoryProps) => {
+  const t = useTranslations();
   return (
     <div className={style.container}>
       {posts.length > 0 ? (
@@ -33,9 +35,7 @@ export const MainOfCategory = ({ posts }: MainOfCategoryProps) => {
           </Link>
         ))
       ) : (
-        <p className={style.no_posts_message}>
-          No posts found for the selected tag. Try Another!
-        </p>
+        <p className={style.no_posts_message}>{t('Category.no_post_found')}</p>
       )}
     </div>
   );

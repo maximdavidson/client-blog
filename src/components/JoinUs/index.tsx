@@ -1,8 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
+import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 

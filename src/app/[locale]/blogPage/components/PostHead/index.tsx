@@ -1,18 +1,21 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { SlArrowRight } from 'react-icons/sl';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
 export const PostHead = () => {
+  const t = useTranslations();
   return (
     <div className={style.container}>
       <div className={style.text_wrap}>
-        <h3 className={style.sub_title}>Featured Post</h3>
+        <h3 className={style.sub_title}>{t('BlogPosts.subtitle_header')}</h3>
         <h1 className={style.title}>
           Step-by-step guide to choosing great font pairs
         </h1>
         <p className={style.name_date}>
-          By <span className={style.name}>John Doe</span> | May 23, 2022
+          {t('Post.by')} <span className={style.name}>John Doe</span> | May 23,
+          2022
         </p>
         <p className={style.text}>
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -20,7 +23,7 @@ export const PostHead = () => {
           proident.
         </p>
         <Button variant="primary" size="medium" icon={<SlArrowRight />}>
-          Read More
+          {t('Post.btn_title')}
         </Button>
       </div>
       <div className={style.image_wrap}>

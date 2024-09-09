@@ -1,16 +1,18 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { authors } from '@/data/authors';
+import { Link } from '@/navigation';
 import style from './style.module.scss';
 
 export const BlogCollection = () => {
   const posts = authors.flatMap((author) =>
     author.posts.map((post) => ({ ...post, author: author.name })),
   );
+  const t = useTranslations();
 
   return (
     <div className={style.collection}>
-      <h2 className={style.collection_title}>What to read next</h2>
+      <h2 className={style.collection_title}>{t('BlogPost.whatToReadNext')}</h2>
       <div className={style.collection_grid}>
         {posts.slice(0, 3).map((post) => (
           <Link key={post.id} href={`/blogPostPage/${post.id}`}>

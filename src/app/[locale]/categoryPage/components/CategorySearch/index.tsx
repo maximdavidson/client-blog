@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
@@ -23,10 +24,10 @@ export const CategorySearch = ({
   onCategorySelect,
   onTagSelect,
 }: CategorySearchProps) => {
+  const t = useTranslations();
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredResults, setFilteredResults] = useState<string[]>([]);
   const [searchError, setSearchError] = useState('');
-  const router = useRouter();
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
   useEffect(() => {
@@ -53,15 +54,16 @@ export const CategorySearch = ({
   const handleSearchClick = () => {
     if (searchTerm) {
       const lowerSearchTerm = searchTerm.toLowerCase();
-      if (
-        categories.some(
-          (category) => category.title.toLowerCase() === lowerSearchTerm,
-        )
-      ) {
-        onCategorySelect(searchTerm);
-        router.push(`/categoryPage/${searchTerm}`);
-      } else if (tags.some((tag) => tag.toLowerCase() === lowerSearchTerm)) {
-        onTagSelect(searchTerm);
+      const category = categories.find(
+        (category) => category.title.toLowerCase() === lowerSearchTerm,
+      );
+      const tag = tags.find((tag) => tag.toLowerCase() === lowerSearchTerm);
+
+      if (category) {
+        onCategorySelect(category.title);
+      } else if (tag) {
+        onTagSelect(tag);
+        setActiveTag(tag);
       } else {
         setSearchError('No matching results found.');
       }
@@ -72,31 +74,29 @@ export const CategorySearch = ({
     setSearchTerm(result);
   };
 
+  const handleResultClickWrapper = (result: string) => () => {
+    handleResultClick(result);
+  };
+
   const handleTagClick = (tag: string) => {
     onTagSelect(tag);
-  };
-
-  const handleCategoryClick = (category: string) => {
-    onCategorySelect(category);
-    router.push(`/categoryPage/${category}`);
-  };
-
-  const handleResultOwnClick = (result: string) => () =>
-    handleResultClick(result);
-
-  const handleCategoryOwnClick = (category: string) => () =>
-    handleCategoryClick(category);
-
-  const handleTagOwnClick = (tag: string) => () => {
-    handleTagClick(tag);
     setActiveTag(tag);
   };
+
+  const handleTagClickWrapper = (tag: string) => () => {
+    handleTagClick(tag);
+  };
+
+  const handleCategorySelect = (title: string) => () => {
+    onCategorySelect(title);
+  };
+
   return (
     <div className={style.container}>
       <div className={style.search_container}>
         <input
           type="text"
-          placeholder="Search for tag..."
+          placeholder={t('Category.Input.placeholder')}
           className={style.searchInput}
           value={searchTerm}
           onChange={handleInputChange}
@@ -107,7 +107,7 @@ export const CategorySearch = ({
           icon={null}
           onClick={handleSearchClick}
         >
-          Search
+          {t('Category.Input.btn_title')}
         </Button>
       </div>
       {searchError && <p className={style.searchError}>{searchError}</p>}
@@ -117,7 +117,7 @@ export const CategorySearch = ({
             <div
               key={result}
               className={style.filtered_item}
-              onClick={handleResultOwnClick(result)}
+              onClick={handleResultClickWrapper(result)}
             >
               {result}
             </div>
@@ -125,12 +125,15 @@ export const CategorySearch = ({
         </div>
       )}
       <div className={style.item_container}>
-        <h1 className={style.item_container_title}>Categories</h1>
+        <h1 className={style.item_container_title}>
+          {t('Category.categoriesTitle')}
+        </h1>
         {categories.map((category) => (
-          <div
+          <Link
             key={category.title}
+            href={`/categoryPage/${category.title}`}
+            onClick={handleCategorySelect(category.title)}
             className={style.search_item}
-            onClick={handleCategoryOwnClick(category.title)}
           >
             <Image
               src={category.iconSrc}
@@ -140,23 +143,35 @@ export const CategorySearch = ({
               className={style.ico}
             />
             <h2 className={style.item_title}>{category.title}</h2>
-          </div>
+          </Link>
         ))}
       </div>
       <div className={style.tags}>
-        <h1 className={style.tags_item}>All Tags</h1>
+        <h1 className={style.tags_item}>{t('Category.tagsTitle')}</h1>
         <div className={style.tags_list}>
           {tags.map((tag) => (
             <span
               key={tag}
               className={`${style.tag} ${activeTag === tag ? style.activeTag : ''}`}
-              onClick={handleTagOwnClick(tag)}
+              onClick={handleTagClickWrapper(tag)}
             >
               {tag}
             </span>
           ))}
         </div>
       </div>
+
+      {filteredResults.length === 1 &&
+        categories.some(
+          (category) => category.title === filteredResults[0],
+        ) && (
+          <Link
+            href={`/categoryPage/${filteredResults[0]}`}
+            className={style.searchResultLink}
+          >
+            {t('Category.Input.result', { result: filteredResults[0] })}
+          </Link>
+        )}
     </div>
   );
 };

@@ -2,6 +2,7 @@
 
 import React, { FC } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useTranslations } from 'next-intl';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import Button from '@/UI/Button';
 import { Input } from '@/UI/Input';
@@ -17,6 +18,7 @@ interface IFormInput {
 }
 
 export const ContactForm: FC = () => {
+  const t = useTranslations();
   const {
     register,
     handleSubmit,
@@ -45,24 +47,30 @@ export const ContactForm: FC = () => {
   return (
     <div className={style.container}>
       <div className={style.text_wrapper}>
-        <h3 className={style.sub_title}>Contact us</h3>
-        <h1 className={style.title}>Let’s Start a Conversation</h1>
-        <p className={style.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim.
-        </p>
+        <h3 className={style.sub_title}>{t('ContactsUs.Heading.subtitle')}</h3>
+        <h1 className={style.title}>{t('ContactsUs.Heading.title')}</h1>
+        <p className={style.text}>{t('ContactsUs.Heading.information')}</p>
       </div>
       <div className={style.section}>
         <div className={style.left_column}>
-          <h4 className={style.ltitle}>Working hours</h4>
+          <h4 className={style.ltitle}>
+            {t('ContactsUs.ContactData.workingHours')}
+          </h4>
           <div className={style.line}></div>
-          <p className={style.date_text}>Monday To Friday</p>
-          <p className={style.date_text}>9:00 AM to 8:00 PM </p>
-          <p className={style.sup_text}>Our Support Team is available 24/7</p>
+          <p className={style.date_text}>
+            {t('ContactsUs.ContactData.mondayToFriday')}
+          </p>
+          <p className={style.date_text}>
+            {t('ContactsUs.ContactData.workTime')}
+          </p>
+          <p className={style.sup_text}>
+            {t('ContactsUs.ContactData.supportAvailable')}
+          </p>
         </div>
         <div className={style.right_column}>
-          <h4 className={style.ltitle}>Contact Us</h4>
+          <h4 className={style.ltitle}>
+            {t('ContactsUs.ContactData.contactUs')}
+          </h4>
           <div className={style.line}></div>
           <p className={style.date_text}>020 7993 2905</p>
           <p className={style.sup_text}>hello@finsweet.com</p>
@@ -72,7 +80,7 @@ export const ContactForm: FC = () => {
         <Input
           type="text"
           name="fullName"
-          placeholder="Full Name"
+          placeholder={t('ContactsUs.Form.Placeholders.name')}
           register={register('fullName')}
           error={errors.fullName?.message}
         />
@@ -80,7 +88,7 @@ export const ContactForm: FC = () => {
         <Input
           type="email"
           name="email"
-          placeholder="Your Email"
+          placeholder={t('ContactsUs.Form.Placeholders.email')}
           register={register('email')}
           error={errors.email?.message}
         />
@@ -88,7 +96,7 @@ export const ContactForm: FC = () => {
         <div className={style.inputWrapper}>
           <select {...register('queryRelated')} className={style.input}>
             <option value="" disabled>
-              Query Related
+              {t('ContactsUs.Form.Placeholders.queryRelated')}
             </option>
             <option value="support">Support</option>
             <option value="sales">Sales</option>
@@ -102,7 +110,7 @@ export const ContactForm: FC = () => {
         <Input
           type="textarea"
           name="message"
-          placeholder="Message"
+          placeholder={t('ContactsUs.Form.Placeholders.message')}
           register={register('message')}
           error={errors.message?.message}
         />

@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Routes } from '@/constants/routes';
+import { Link } from '@/navigation';
 import style from './style.module.scss';
 import { Modal } from '../VideoModal';
 

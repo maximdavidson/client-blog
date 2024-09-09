@@ -67,9 +67,10 @@
   },
   "BlogPosts": {
     "title": "Все посты",
+    "subtitle_header": "Избранный пост",
     "Pagination": {
-      "btn_title_prev": "< Пред",
-      "btn_title_next": "След >"
+      "btn_title_prev": "Назад",
+      "btn_title_next": "Вперёд"
     }
   },
   "BlogPost": {
@@ -79,7 +80,10 @@
   "AuthorPage": {
     "hello": "Привет, я",
     "welcome": "и добро пожаловать в мой блог",
-    "title": "Мои публикации"
+    "title": "Мои публикации",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus",
+    "small_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "no_result": "Постов ещё нет."
   },
   "ContactsUs": {
     "Heading": {
@@ -119,8 +123,8 @@
   },
   "AboutUs": {
     "Heading": {
-      "title": "Мы - команда авторов контента, которые делятся своими знаниями",
       "subtitle": "О НАС",
+      "title": "Мы - команда авторов контента, которые делятся своими знаниями",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     "Overview": {
@@ -148,6 +152,7 @@
   "Category": {
     "categoriesTitle": "Категории",
     "tagsTitle": "Все теги",
+    "no_post_found": "Постов с такими тегами не найдено. Попробуй заново!",
     "Input": {
       "placeholder": "Найти по тегу...",
       "btn_title": "Поиск"
@@ -164,11 +169,5 @@
       "title_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
       "description_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."
     }
-  },
-  "Categories": {
-    "business": "Бизнес",
-    "startup": "Стартап",
-    "economy": "Экономика",
-    "technology": "Технологии"
   }
 }

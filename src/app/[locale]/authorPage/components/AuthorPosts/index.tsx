@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 import style from './style.module.scss';
 
 interface Post {
@@ -16,13 +17,14 @@ interface AuthorPostsProps {
 }
 
 export const AuthorPosts: React.FC<AuthorPostsProps> = ({ posts }) => {
+  const t = useTranslations();
   if (posts.length === 0) {
-    return <p className={style.no_result}>No posts available.</p>;
+    return <p className={style.no_result}>{t('AuthorPage.no_result')}</p>;
   }
 
   return (
     <div className={style.container}>
-      <h1 className={style.title}>My Posts</h1>
+      <h1 className={style.title}>{t('AuthorPage.title')}</h1>
       {posts.map((post) => (
         <Link key={post.id} href={`/blogPostPage/${post.id}`}>
           <div className={style.post_card} key={post.id}>
@@ -37,10 +39,7 @@ export const AuthorPosts: React.FC<AuthorPostsProps> = ({ posts }) => {
             <div className={style.text_wrap}>
               <h4 className={style.sub_title}>{post.category}</h4>
               <h1 className={style.card_title}>{post.title}</h1>
-              <p className={style.text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+              <p className={style.text}>{t('AuthorPage.small_text')}</p>
             </div>
           </div>
         </Link>

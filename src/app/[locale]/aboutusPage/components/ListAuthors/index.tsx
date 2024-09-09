@@ -1,12 +1,14 @@
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { authors } from '@/data/authors';
 import { AuthorCard } from './components/AuthorCard';
 import style from './style.module.scss';
 
 export const ListAuthor = () => {
+  const t = useTranslations();
   return (
     <div className={style.container}>
-      <h1 className={style.title}>List of Authors </h1>
+      <h1 className={style.title}>{t('AuthorsSection.title')}</h1>
       <div className={style.cards}>
         {authors.map((author) => (
           <Link href={`/authorPage/${author.id}`} key={author.id}>

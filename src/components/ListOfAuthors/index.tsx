@@ -1,9 +1,9 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
 import { authors } from '@/data/authors';
+import { Link } from '@/navigation';
 import { AuthorCard } from './components/AuthorCard';
 import style from './style.module.scss';
 

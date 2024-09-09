@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import { authors } from '@/data/authors';
 import style from './style.module.scss';
@@ -9,6 +10,7 @@ import style from './style.module.scss';
 const allPosts = authors.flatMap((author) => author.posts);
 
 export const AllPosts = () => {
+  const t = useTranslations();
   const [currentPage, setCurrentPage] = useState(1);
 
   const postsPerPage = 5;
@@ -29,7 +31,7 @@ export const AllPosts = () => {
 
   return (
     <div className={style.container}>
-      <h1 className={style.title}>All posts</h1>
+      <h1 className={style.title}>{t('BlogPosts.title')}</h1>
       <div className={style.line}></div>
       {currentPosts.map((post) => (
         <Link href={`/blogPostPage/${post.id}`} key={post.id}>
@@ -57,7 +59,8 @@ export const AllPosts = () => {
           onClick={handlePrev}
           style={{ cursor: currentPage === 1 ? 'not-allowed' : 'pointer' }}
         >
-          <SlArrowLeft className={style.arrow} /> Prev
+          <SlArrowLeft className={style.arrow} />
+          {t('BlogPosts.Pagination.btn_title_prev')}
         </p>
         <p
           className={style.switch_item}
@@ -69,7 +72,8 @@ export const AllPosts = () => {
                 : 'pointer',
           }}
         >
-          Next <SlArrowRight className={style.arrow} />
+          {t('BlogPosts.Pagination.btn_title_next')}
+          <SlArrowRight className={style.arrow} />
         </p>
       </div>
     </div>

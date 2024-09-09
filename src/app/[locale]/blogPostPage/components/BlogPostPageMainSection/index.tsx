@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Post } from '@/data/authors';
 import style from './style.module.scss';
 
@@ -15,6 +16,7 @@ export const BlogPostPageMainSection = ({
   post,
   author,
 }: BlogPostPageMainSectionProps) => {
+  const t = useTranslations();
   return (
     <div className={style.container}>
       <div className={style.person_card_wrap}>
@@ -29,14 +31,16 @@ export const BlogPostPageMainSection = ({
             />
           </div>
           <div className={style.user_info}>
-            <h2 className={style.user_name}>{author.name}</h2>{' '}
-            <p className={style.user_date}>Posted on {post.date}</p>
+            <h2 className={style.user_name}>{author.name}</h2>
+            <p className={style.user_date}>
+              {t('BlogPost.postedOn')} {post.date}
+            </p>
           </div>
         </div>
         <h1 className={style.title}>{post.title}</h1>
         <div className={style.startup_wrap}>
           <Image
-            src="/images/startup.png"
+            src="/images/shuttle.png"
             alt="Startup"
             width={30}
             height={30}

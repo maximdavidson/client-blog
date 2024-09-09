@@ -1,9 +1,9 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
 import { categories } from '@/constants/categories';
+import { Link } from '@/navigation';
 import { CategoryCard } from './components/CategoryCard';
 import style from './style.module.scss';
 

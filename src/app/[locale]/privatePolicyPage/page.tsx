@@ -7,9 +7,7 @@ const privatePolicyPage = () => {
   return (
     <>
       <ErrorBoundary>
-        <Header />
         <PolicyInfo />
-        <Footer />
       </ErrorBoundary>
     </>
   );

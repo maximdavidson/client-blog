@@ -1,9 +1,9 @@
 export const Routes = {
   Home: '/',
   Blog: '/blogPage',
-  Post: '/post',
-  Category: '/category',
-  Author: '/author',
+  Post: '/blogPostPage',
+  Category: '/categoryPage',
+  Author: '/authorPage',
 
   AboutUs: '/aboutusPage',
   ContactUs: '/contactPage',
