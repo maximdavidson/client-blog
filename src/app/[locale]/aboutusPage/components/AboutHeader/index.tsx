@@ -12,11 +12,14 @@ export const AboutHeader = () => {
             <h4 className={style.sub_title}>{t('AboutUs.Heading.subtitle')}</h4>
             <h1 className={style.card_title}>{t('AboutUs.Heading.title')}</h1>
           </div>
-          <p className={style.text}>{t('AboutUs.Heading.description')}</p>
+          <p className={`${style.text} ${style.text_none_mobile}`}>
+            {t('AboutUs.Heading.description')}
+          </p>
         </div>
         <div className={style.poster_wrap}>
           <div className={style.poster}>
             <Image
+              className={style.poster_image}
               src="/images/aboutUsBack.png"
               alt="About Us Background"
               width={1360}
@@ -85,6 +88,7 @@ export const AboutHeader = () => {
           </div>
           <div className={style.image_side}>
             <Image
+              className={style.card_image}
               src="/images/hands.png"
               alt="About Us Hands Background"
               width={624}
@@ -96,6 +100,7 @@ export const AboutHeader = () => {
         <div className={style.down_card}>
           <div className={style.image_side}>
             <Image
+              className={style.card_image}
               src="/images/people.png"
               alt="About Us Hands Background"
               width={624}

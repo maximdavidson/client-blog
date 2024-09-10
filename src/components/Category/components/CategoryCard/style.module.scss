@@ -1,10 +1,4 @@
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == mobile {
-    @media (max-width: 768px) {
-      @content;
-    }
-  }
-}
+@import '../../../../styles/mixins.scss';
 
 .card {
   cursor: pointer;
@@ -38,5 +32,9 @@
 
   &:hover {
     background: rgba(255, 208, 80, 1);
+  }
+
+  @include respond-to(mobile) {
+    width: 300px;
   }
 }

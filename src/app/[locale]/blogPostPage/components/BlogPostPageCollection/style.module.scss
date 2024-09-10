@@ -1,3 +1,5 @@
+@import '@/styles/mixins.scss';
+
 .collection {
   margin-left: 80px;
   margin-right: 80px;
@@ -16,6 +18,10 @@
 .collection_item {
   padding-left: 15px;
   cursor: pointer;
+  @include respond-to(tablet) {
+    padding-right: 15px;
+    padding-top: 10px;
+  }
 }
 
 .collection_item:hover {
@@ -27,6 +33,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 32px;
+  @include respond-to(tablet) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .collection_title {
@@ -68,4 +79,12 @@
   width: 1280px;
   height: 2px;
   margin-bottom: 16px;
+
+  @include respond-to(tablet) {
+    width: 580px;
+  }
+
+  @include respond-to(mobile) {
+    width: 350px;
+  }
 }

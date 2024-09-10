@@ -82,6 +82,31 @@
       }
     }
   }
+  @include respond-to(mobile) {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    width: 91%;
+    background-color: rgba(35, 37, 54, 1);
+    gap: 16px;
+    padding: 20px;
+    z-index: 10;
+
+    &.open {
+      display: flex;
+    }
+
+    a {
+      padding: 10px;
+      text-align: center;
+
+      &:hover {
+        opacity: 70%;
+      }
+    }
+  }
 }
 
 .burger_menu {
