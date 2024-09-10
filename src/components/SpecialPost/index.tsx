@@ -31,6 +31,7 @@ const SpecialPost = () => {
               alt="Image Special Post Side"
               width={979}
               height={705}
+              className={style.image}
             />
           </div>
           <div className={style.content}>

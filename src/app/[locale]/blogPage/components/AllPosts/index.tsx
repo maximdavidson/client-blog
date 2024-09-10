@@ -1,10 +1,10 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import { authors } from '@/data/authors';
+import { Link } from '@/navigation';
 import style from './style.module.scss';
 
 const allPosts = authors.flatMap((author) => author.posts);

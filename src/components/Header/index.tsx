@@ -10,6 +10,7 @@ import { Modal } from '../VideoModal';
 export const Header = () => {
   const t = useTranslations();
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const handleVideoButtonClick = () => {
     setModalOpen(true);
@@ -19,11 +20,23 @@ export const Header = () => {
     setModalOpen(false);
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={style.container}>
       <h1 className={style.title}> {t('Logo.title')}</h1>
       <div className={style.navigate_wrap}>
-        <nav className={style.navigation}>
+        <div className={style.burger_menu} onClick={toggleMenu}>
+          <img
+            src={
+              isMenuOpen ? 'images/menuIcon-close.png' : 'images/menuIcon.png'
+            }
+            alt="Menu Icon"
+          />
+        </div>
+        <nav className={`${style.navigation} ${isMenuOpen ? style.open : ''}`}>
           <Link href={Routes.Home}>{t('Navbar.home')}</Link>
           <Link href={Routes.Blog}>{t('Navbar.blog')}</Link>
           <Link href={Routes.AboutUs}>{t('Navbar.about_us')}</Link>

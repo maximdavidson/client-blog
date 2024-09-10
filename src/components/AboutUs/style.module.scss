@@ -1,8 +1,15 @@
+@import '../../styles/mixins.scss';
+
 .container {
   margin-left: 80px;
   margin-right: 80px;
   margin-bottom: 128px;
   position: relative;
+
+  @include respond-to(mobile) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 .stripe {
@@ -12,6 +19,15 @@
   width: 1061px;
   height: 23px;
   background: linear-gradient(to right, #ffd700 70%, #6a0dad 70%);
+
+  @include respond-to(tablet) {
+    width: 561px;
+    left: 29px;
+  }
+
+  @include respond-to(mobile) {
+    display: none;
+  }
 }
 
 .wrapper {
@@ -25,6 +41,16 @@
   padding-left: 80px;
   padding-top: 56px;
   padding-bottom: 56px;
+
+  @include respond-to(tablet) {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+  }
+
+  @include respond-to(mobile) {
+    padding-left: 20px;
+  }
 }
 
 .sub_title {
@@ -32,6 +58,10 @@
   font-weight: 600;
   line-height: 20px;
   letter-spacing: 3px;
+
+  @include respond-to(tablet) {
+    font-size: 14px;
+  }
 }
 
 .about_title {
@@ -40,6 +70,10 @@
   font-weight: 700;
   line-height: 48px;
   letter-spacing: -2px;
+
+  @include respond-to(tablet) {
+    font-size: 30px;
+  }
 }
 
 .text {
@@ -48,6 +82,10 @@
   font-weight: 400;
   line-height: 28px;
   color: rgba(109, 110, 118, 0.661);
+
+  @include respond-to(tablet) {
+    font-size: 14px;
+  }
 }
 
 .mission_title {
@@ -55,6 +93,10 @@
   font-size: 28px;
   font-weight: 700;
   line-height: 40px;
+
+  @include respond-to(tablet) {
+    font-size: 24px;
+  }
 }
 
 .btn {
