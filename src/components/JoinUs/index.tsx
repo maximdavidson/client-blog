@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
+import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
@@ -26,7 +27,7 @@ const JoinUs = () => {
         <>
           <h1 className={style.title}>{t('JoinSection.title')}</h1>
           <p className={style.text}>{t('JoinSection.description')}</p>
-          <Link href="contactPage">
+          <Link href={Routes.ContactUs}>
             <Button variant="primary" size="medium" icon={null}>
               {t('JoinSection.btn_title')}
             </Button>

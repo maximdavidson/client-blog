@@ -1,3 +1,5 @@
+@import '@/styles/mixins.scss';
+
 .container {
   display: flex;
   flex-direction: column;
@@ -15,6 +17,11 @@
   background: rgba(244, 240, 248, 1);
   padding-bottom: 80px;
   padding-top: 80px;
+
+  @include respond-to(mobile) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .titlef {
@@ -24,8 +31,11 @@
   line-height: 64px;
   letter-spacing: -2px;
   max-width: 814px;
-
   margin: 0;
+
+  @include respond-to(mobile) {
+    font-size: 40px;
+  }
 }
 
 .textf {
@@ -35,6 +45,10 @@
   font-weight: 400;
   line-height: 28px;
   color: rgba(109, 110, 118, 0.797);
+
+  @include respond-to(mobile) {
+    font-size: 14px;
+  }
 }
 
 .title {
@@ -44,6 +58,10 @@
   line-height: 64px;
   letter-spacing: -2px;
   max-width: 814px;
+
+  @include respond-to(mobile) {
+    font-size: 38px;
+  }
 }
 
 .text {
@@ -58,4 +76,9 @@
 .main_wrap {
   margin-top: 128px;
   margin-bottom: 128px;
+
+  @include respond-to(mobile) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
 }

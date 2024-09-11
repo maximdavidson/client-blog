@@ -1,3 +1,5 @@
+@import '@/styles/mixins.scss';
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,10 @@
   justify-content: center;
   text-align: center;
   margin-top: 128px;
+
+  @include respond-to(mobile) {
+    margin-top: 70px;
+  }
 }
 
 .sub_title {
@@ -22,6 +28,14 @@
   line-height: 64px;
   letter-spacing: -2px;
   margin-bottom: 24px;
+
+  @include respond-to(tablet) {
+    font-size: 40px;
+  }
+
+  @include respond-to(mobile) {
+    font-size: 36px;
+  }
 }
 
 .text {
@@ -31,6 +45,13 @@
   line-height: 28px;
   color: rgba(109, 110, 118, 0.661);
   margin-bottom: 64px;
+
+  @include respond-to(tablet) {
+    max-width: 728px;
+  }
+  @include respond-to(mobile) {
+    font-size: 14px;
+  }
 }
 
 .section {
@@ -40,6 +61,17 @@
   margin-bottom: 32px;
   background: rgba(89, 46, 169, 1);
   padding: 48px 74px 54px 64px;
+
+  @include respond-to(tablet) {
+    width: 580px;
+  }
+
+  @include respond-to(mobile) {
+    width: 230px;
+    grid-gap: 41px;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .left_column {
@@ -80,6 +112,10 @@
   width: 294px;
   height: 1px;
   margin-bottom: 16px;
+
+  @include respond-to(mobile) {
+    width: 220px;
+  }
 }
 
 .form {
@@ -106,6 +142,13 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 28px;
+    }
+
+    @include respond-to(tablet) {
+      width: 599px;
+    }
+    @include respond-to(mobile) {
+      width: 399px;
     }
   }
 

@@ -1,6 +1,17 @@
+@import '@/styles/mixins.scss';
+
 .flex_container {
   margin-bottom: 128px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 147px;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 17px;
+    margin-bottom: 100px;
+  }
+
+  @include respond-to(mobile) {
+  }
 }

@@ -1,10 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import style from './style.module.scss';
+import menuIconClose from '../../../public/images/menuIcon-close.png';
+import menuIcon from '../../../public/images/menuIcon.png';
 import { Modal } from '../VideoModal';
 
 export const Header = () => {
@@ -29,11 +32,11 @@ export const Header = () => {
       <h1 className={style.title}> {t('Logo.title')}</h1>
       <div className={style.navigate_wrap}>
         <div className={style.burger_menu} onClick={toggleMenu}>
-          <img
-            src={
-              isMenuOpen ? 'images/menuIcon-close.png' : 'images/menuIcon.png'
-            }
+          <Image
+            src={isMenuOpen ? menuIconClose : menuIcon}
             alt="Menu Icon"
+            width={24}
+            height={24}
           />
         </div>
         <nav className={`${style.navigation} ${isMenuOpen ? style.open : ''}`}>

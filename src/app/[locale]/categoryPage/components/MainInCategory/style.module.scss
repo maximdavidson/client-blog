@@ -1,7 +1,13 @@
+@import '@/styles/mixins.scss';
+
 .container {
   margin-left: 80px;
   margin-top: 128px;
   margin-bottom: 64px;
+
+  @include respond-to(tablet) {
+    margin-bottom: 0px;
+  }
 }
 
 .title {
@@ -18,6 +24,15 @@
   display: flex;
   gap: 32px;
   margin-bottom: 64px;
+
+  @include respond-to(tablet) {
+    width: 620px;
+  }
+
+  @include respond-to(mobile) {
+    flex-direction: column;
+    width: 320px;
+  }
 }
 
 .post_card:hover {
@@ -26,6 +41,15 @@
 
 .image {
   object-fit: cover;
+
+  @include respond-to(tablet) {
+    width: 200px;
+    height: 270px;
+  }
+
+  @include respond-to(mobile) {
+    padding-left: 50px;
+  }
 }
 
 .sub_title {
@@ -34,6 +58,9 @@
   line-height: 20px;
   letter-spacing: 3px;
   color: rgba(89, 46, 169, 1);
+
+  @include respond-to(mobile) {
+  }
 }
 
 .card_title {
@@ -43,6 +70,14 @@
   line-height: 48px;
   letter-spacing: -2px;
   color: rgba(35, 37, 54, 1);
+
+  @include respond-to(tablet) {
+    max-width: 412px;
+    font-size: 30px;
+  }
+
+  @include respond-to(mobile) {
+  }
 }
 
 .text {
@@ -53,6 +88,13 @@
   color: rgba(109, 110, 118, 0.661);
   margin-top: 0px;
   margin-bottom: 24px;
+
+  @include respond-to(tablet) {
+    max-width: 412px;
+  }
+
+  @include respond-to(mobile) {
+  }
 }
 
 .switch {
