@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { locales } from '@/constants/locales';
 import { Routes } from '@/constants/routes';
+import { socials } from '@/constants/footerSocials';
 import { Link, useRouter, usePathname } from '@/navigation';
 
 import Button from '@/UI/Button';
@@ -104,38 +105,16 @@ export const Footer = () => {
             <p>Hello@finsweet.com 020 7993 2905</p>
           </div>
           <div className={style.socials}>
-            <a href="https://facebook.com">
-              <Image
-                src="/images/FaceBookGrey.png"
-                alt="FaceBook Logo"
-                width={16}
-                height={16}
-              />
-            </a>
-            <a href="https://twitter.com">
-              <Image
-                src="/images/TwitterGrey.png"
-                alt="Twitter Logo"
-                width={16}
-                height={16}
-              />
-            </a>
-            <a href="https://instagram.com">
-              <Image
-                src="/images/InstagramGrey.png"
-                alt="Instagram Logo"
-                width={16}
-                height={16}
-              />
-            </a>
-            <a href="https://linkedin.com">
-              <Image
-                src="/images/LinkedInGrey.png"
-                alt="LinkedIn Logo"
-                width={16}
-                height={16}
-              />
-            </a>
+            {socials.map((social, index) => (
+              <a key={index} href={social.href}>
+                <Image
+                  src={social.src}
+                  alt={social.alt}
+                  width={16}
+                  height={16}
+                />
+              </a>
+            ))}
           </div>
         </div>
       </div>

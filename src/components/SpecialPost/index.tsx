@@ -9,7 +9,7 @@ import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
-const SpecialPost = () => {
+export const SpecialPost = () => {
   const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
@@ -53,5 +53,3 @@ const SpecialPost = () => {
     </div>
   );
 };
-
-export default SpecialPost;

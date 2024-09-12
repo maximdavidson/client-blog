@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { testimonials } from '@/constants/testimonials';
 import style from './style.module.scss';
 
-const Testimonial = () => {
+export const Testimonial = () => {
   const t = useTranslations();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [_, setDirection] = useState(0);
@@ -85,5 +85,3 @@ const Testimonial = () => {
     </div>
   );
 };
-
-export default Testimonial;

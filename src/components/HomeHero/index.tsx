@@ -9,7 +9,7 @@ import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
-const HomeHero = () => {
+export const HomeHero = () => {
   const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
@@ -64,5 +64,3 @@ const HomeHero = () => {
     </div>
   );
 };
-
-export default HomeHero;

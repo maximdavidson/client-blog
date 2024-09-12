@@ -7,7 +7,7 @@ import { Link } from '@/navigation';
 import { CategoryCard } from './components/CategoryCard';
 import style from './style.module.scss';
 
-const Category = () => {
+export const Category = () => {
   const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -50,5 +50,3 @@ const Category = () => {
     </div>
   );
 };
-
-export default Category;

@@ -7,7 +7,7 @@ import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
-const AboutUs = () => {
+export const AboutUs = () => {
   const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -65,5 +65,3 @@ const AboutUs = () => {
     </div>
   );
 };
-
-export default AboutUs;

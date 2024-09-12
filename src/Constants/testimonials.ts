@@ -11,7 +11,7 @@ export const testimonials = [
     text: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     author: 'Dianne Russell',
     location: 'Los Angeles, USA',
-    avatar: '/images/Dianne_Russell.png',
+    avatar: '/images/Dianne_Russell.jpg',
   },
   {
     id: 3,

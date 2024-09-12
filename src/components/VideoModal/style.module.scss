@@ -1,4 +1,4 @@
-@import '../../styles/mixins.scss';
+@import '@/styles/mixins.scss';
 
 .modalOverlay {
   position: fixed;
@@ -15,33 +15,33 @@
   @include respond-to(mobile) {
     width: 96%;
   }
-}
 
-.modalContent {
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 800px;
-  width: 100%;
-  position: relative;
+  .modalContent {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
 
-  @include respond-to(mobile) {
-    max-width: 300px;
-    padding: 25px;
+    @include respond-to(mobile) {
+      max-width: 300px;
+      padding: 25px;
+    }
+
+    .closeButton {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .videoPlayer {
+      width: 100%;
+      border-radius: 8px;
+    }
   }
-}
-
-.closeButton {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.videoPlayer {
-  width: 100%;
-  border-radius: 8px;
 }

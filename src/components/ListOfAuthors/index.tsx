@@ -7,7 +7,7 @@ import { Link } from '@/navigation';
 import { AuthorCard } from './components/AuthorCard';
 import style from './style.module.scss';
 
-const ListOfAuthors = () => {
+export const ListOfAuthors = () => {
   const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
@@ -43,5 +43,3 @@ const ListOfAuthors = () => {
     </div>
   );
 };
-
-export default ListOfAuthors;

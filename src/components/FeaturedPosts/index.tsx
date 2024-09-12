@@ -4,12 +4,13 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SlArrowRight } from 'react-icons/sl';
 import { useInView } from 'react-intersection-observer';
+import { posts } from '@/constants/futuresPostMock';
 import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
-const FeaturedPosts = () => {
+export const FeaturedPosts = () => {
   const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -69,51 +70,20 @@ const FeaturedPosts = () => {
                 {t('HomePostsSection.viewAll')}
               </Link>
             </div>
-            <div className={style.post_item}>
-              <p className={style.item_text}>
-                {t('Post.by')}
-                <span className={style.item_text}>James Doe</span> | May 23,
-                2022
-              </p>
-              <h1 className={style.item_title}>
-                8 Figma design systems that you can download for free today.
-              </h1>
-            </div>
-            <div className={style.post_item}>
-              <p className={style.item_text}>
-                {t('Post.by')}
-                <span className={style.item_text}>James Doe</span> | May 23,
-                2022
-              </p>
-              <h1 className={style.item_title}>
-                8 Figma design systems that you can download for free today.
-              </h1>
-            </div>
-            <div className={style.post_item}>
-              <p className={style.item_text}>
-                {t('Post.by')}
-                <span className={style.item_text}>James Doe</span> | May 23,
-                2022
-              </p>
-              <h1 className={style.item_title}>
-                8 Figma design systems that you can download for free today.
-              </h1>
-            </div>
-            <div className={style.post_item}>
-              <p className={style.item_text}>
-                {t('Post.by')}
-                <span className={style.item_text}>James Doe</span> | May 23,
-                2022
-              </p>
-              <h1 className={style.item_title}>
-                8 Figma design systems that you can download for free today.
-              </h1>
-            </div>
+
+            {posts.map((post) => (
+              <div key={post.id} className={style.post_item}>
+                <p className={style.item_text}>
+                  {t('Post.by')}
+                  <span className={style.item_text}>{post.author}</span> |{' '}
+                  {post.date}
+                </p>
+                <h1 className={style.item_title}>{post.title}</h1>
+              </div>
+            ))}
           </div>
         </>
       )}
     </div>
   );
 };
-
-export default FeaturedPosts;

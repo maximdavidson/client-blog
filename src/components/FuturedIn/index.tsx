@@ -1,10 +1,13 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
+import { logos } from '@/constants/logos';
 import style from './style.module.scss';
 
-const FuturedIn = () => {
+export const FuturedIn = () => {
+  const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -22,43 +25,20 @@ const FuturedIn = () => {
       {isVisible && (
         <div className={style.wrapper}>
           <div className={style.text_wrap}>
-            <p className={style.sub_text}>We are</p>
-            <p className={style.text}>Featured in</p>
+            <p className={style.sub_text}>{t('FeaturedSection.subtitle')}</p>
+            <p className={style.text}>{t('FeaturedSection.title')}</p>
           </div>
-          <Image
-            src="/images/Logo1.png"
-            alt="Company Logo"
-            width={160}
-            height={32}
-          />
-          <Image
-            src="/images/Logo2.png"
-            alt="Company Logo"
-            width={160}
-            height={32}
-          />
-          <Image
-            src="/images/Logo3.png"
-            alt="Company Logo"
-            width={160}
-            height={32}
-          />
-          <Image
-            src="/images/Logo4.png"
-            alt="Company Logo"
-            width={160}
-            height={32}
-          />
-          <Image
-            src="/images/Logo5.png"
-            alt="Company Logo"
-            width={160}
-            height={32}
-          />
+          {logos.map((logo, index) => (
+            <Image
+              key={index}
+              src={logo.src}
+              alt={logo.alt}
+              width={logo.width}
+              height={logo.height}
+            />
+          ))}
         </div>
       )}
     </div>
   );
 };
-
-export default FuturedIn;

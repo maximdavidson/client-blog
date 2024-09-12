@@ -1,4 +1,4 @@
-@import '../../styles/mixins.scss';
+@import '@/styles/mixins.scss';
 
 .container {
   margin-left: 80px;
@@ -22,7 +22,6 @@
 }
 
 .image {
-  width: 100%;
   height: auto;
 
   @include respond-to(tablet) {
@@ -33,7 +32,7 @@
 
 .content {
   position: relative;
-  top: 121px;
+  top: 123px;
   left: 574px;
   width: 706px;
   background: rgba(255, 255, 255, 1);
