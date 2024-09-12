@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SlArrowRight } from 'react-icons/sl';
 import { useInView } from 'react-intersection-observer';
+import { Routes } from '@/constants/routes';
+import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
@@ -40,9 +42,11 @@ const SpecialPost = () => {
             </h3>
             <h1 className={style.title}>{t('WhyStartedSection.title')}</h1>
             <p className={style.text}>{t('WhyStartedSection.description')}</p>
-            <Button variant="primary" size="medium" icon={<SlArrowRight />}>
-              {t('WhyStartedSection.btn_title')}
-            </Button>
+            <Link href={Routes.AboutUs}>
+              <Button variant="primary" size="medium" icon={<SlArrowRight />}>
+                {t('WhyStartedSection.btn_title')}
+              </Button>
+            </Link>
           </div>
         </div>
       )}

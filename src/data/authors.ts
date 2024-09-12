@@ -76,7 +76,7 @@ export const authors = [
   },
   {
     id: 'dianne-russell',
-    avatarSrc: '/images/Dianne_Russell.png',
+    avatarSrc: '/images/Dianne_Russell.jpg',
     name: 'Dianne Russell',
     role: 'Content Writer @Company',
     socialLinks: [
@@ -203,7 +203,7 @@ export const authors = [
   },
   {
     id: 'guy-hawkins',
-    avatarSrc: '/images/Guy_Hawkins.png',
+    avatarSrc: '/images/Guy_Hawkins.jpg',
     name: 'Guy Hawkins',
     role: 'Content Writer @Company',
     socialLinks: [
@@ -215,7 +215,7 @@ export const authors = [
   },
   {
     id: 'eleanor_pena',
-    avatarSrc: '/images/Eleanor_Pena.png',
+    avatarSrc: '/images/Eleanor_Pena.jpg',
     name: 'Eleanor Pena',
     role: 'Content Writer @Company',
     socialLinks: [

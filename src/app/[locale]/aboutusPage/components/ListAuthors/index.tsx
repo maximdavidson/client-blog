@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { authors } from '@/data/authors';
+import { Link } from '@/navigation';
 import { AuthorCard } from './components/AuthorCard';
 import style from './style.module.scss';
 

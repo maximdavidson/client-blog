@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
+import { Routes } from '@/constants/routes';
+import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
 
@@ -38,9 +40,11 @@ const AboutUs = () => {
                   {t('HomeInfoSection.about_description')}
                 </p>
                 <div className={style.btn}>
-                  <Button variant="secondary" size="without">
-                    {t('HomeInfoSection.link_title')}
-                  </Button>
+                  <Link href={Routes.AboutUs}>
+                    <Button variant="secondary" size="without">
+                      {t('HomeInfoSection.link_title')}
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className={style.mission_wrap}>

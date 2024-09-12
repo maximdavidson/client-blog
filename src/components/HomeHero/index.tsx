@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SlArrowRight } from 'react-icons/sl';
 import { useInView } from 'react-intersection-observer';
+import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
@@ -52,7 +53,7 @@ const HomeHero = () => {
               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
               cupidatat non proident.
             </p>
-            <Link href="8">
+            <Link href={Routes.Blog}>
               <Button variant="primary" size="medium" icon={<SlArrowRight />}>
                 {t('Post.btn_title')}
               </Button>

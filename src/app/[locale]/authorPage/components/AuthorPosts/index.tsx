@@ -30,6 +30,7 @@ export const AuthorPosts: React.FC<AuthorPostsProps> = ({ posts }) => {
           <div className={style.post_card} key={post.id}>
             <div className={style.image_wrap}>
               <Image
+                className={style.image_post}
                 src={post.imageUrl}
                 alt={post.title}
                 width={412}
