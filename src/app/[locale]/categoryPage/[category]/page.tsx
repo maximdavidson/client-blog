@@ -3,23 +3,12 @@ import { useState, useEffect } from 'react';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { categories } from '@/constants/categories';
 import { tags } from '@/constants/tags';
-import { Post, authors } from '@/data/authors';
+import { Post } from '@/data/authors';
 import { CategoryHeader } from '../components/categoryHeader';
 import { CategorySearch } from '../components/CategorySearch';
 import { MainOfCategory } from '../components/MainInCategory';
 import style from '../page.module.scss';
-
-const getPostsByCategoryAndTag = (category: string, tag?: string): Post[] => {
-  return authors
-    .flatMap((author) => author.posts)
-    .filter(
-      (post) =>
-        post.category.toLowerCase() === category.toLowerCase() &&
-        (!tag ||
-          (post.tags &&
-            post.tags.some((t) => t.toLowerCase() === tag.toLowerCase()))),
-    );
-};
+import { getPostsByCategoryAndTag } from '@/utils/getPostsByCategoryAndTag';
 
 interface CategoryPageProps {
   params: {

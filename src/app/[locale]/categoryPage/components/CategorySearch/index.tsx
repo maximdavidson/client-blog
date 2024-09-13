@@ -67,6 +67,8 @@ export const CategorySearch = ({
       } else {
         setSearchError('No matching results found.');
       }
+
+      setSearchTerm('');
     }
   };
 

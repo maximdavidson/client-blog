@@ -1,6 +1,6 @@
-import Category from '@/components/Category';
+import { Category } from '@/components/Category';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import JoinUs from '@/components/JoinUs';
+import { JoinUs } from '@/components/JoinUs';
 import { AllPosts } from './components/AllPosts';
 import { PostHead } from './components/PostHead';
 

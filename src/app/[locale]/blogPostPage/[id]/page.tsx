@@ -1,7 +1,7 @@
 'use client';
 import { useParams } from 'next/navigation';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import JoinUs from '@/components/JoinUs';
+import { JoinUs } from '@/components/JoinUs';
 import { authors } from '@/data/authors';
 import { BlogCollection } from '../components/BlogPostPageCollection';
 import { BlogPostPageMainSection } from '../components/BlogPostPageMainSection';

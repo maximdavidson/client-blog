@@ -11,46 +11,47 @@
   @include respond-to(mobile) {
     margin-top: 70px;
   }
-}
 
-.sub_title {
-  font-size: 16px;
-  font-weight: 900;
-  line-height: 20px;
-  letter-spacing: 3px;
-  margin-bottom: 12px;
-}
-
-.title {
-  margin-top: 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 64px;
-  letter-spacing: -2px;
-  margin-bottom: 24px;
-
-  @include respond-to(tablet) {
-    font-size: 40px;
+  .sub_title {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
   }
 
-  @include respond-to(mobile) {
-    font-size: 36px;
-  }
-}
+  .title {
+    margin-top: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
 
-.text {
-  max-width: 768px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 28px;
-  color: rgba(109, 110, 118, 0.661);
-  margin-bottom: 64px;
+    @include respond-to(tablet) {
+      font-size: 40px;
+    }
 
-  @include respond-to(tablet) {
-    max-width: 728px;
+    @include respond-to(mobile) {
+      font-size: 36px;
+    }
   }
-  @include respond-to(mobile) {
-    font-size: 14px;
+
+  .text {
+    max-width: 768px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgba(109, 110, 118, 0.661);
+    margin-bottom: 64px;
+
+    @include respond-to(tablet) {
+      max-width: 728px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -72,49 +73,46 @@
     display: flex;
     flex-direction: column;
   }
-}
 
-.left_column {
-  text-align-last: left;
-}
+  .left_column,
+  .right_column {
+    text-align-last: left;
 
-.ltitle {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  color: rgba(214, 214, 214, 0.637);
-}
+    .ltitle {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: rgba(214, 214, 214, 0.637);
+    }
 
-.date_text {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 32px;
-  color: rgba(255, 255, 255, 1);
-  margin-bottom: 0;
-  margin-top: 0;
-}
+    .date_text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 32px;
+      color: rgba(255, 255, 255, 1);
+      margin-bottom: 0;
+      margin-top: 0;
+    }
 
-.sup_text {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 28px;
-  color: rgba(214, 214, 214, 0.637);
-  margin-bottom: 0;
-  margin-top: 0;
-}
+    .sup_text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      color: rgba(214, 214, 214, 0.637);
+      margin-bottom: 0;
+      margin-top: 0;
+    }
 
-.right_column {
-  text-align-last: left;
-}
+    .line {
+      background-color: rgba(214, 214, 214, 0.637);
+      width: 294px;
+      height: 1px;
+      margin-bottom: 16px;
 
-.line {
-  background-color: rgba(214, 214, 214, 0.637);
-  width: 294px;
-  height: 1px;
-  margin-bottom: 16px;
-
-  @include respond-to(mobile) {
-    width: 220px;
+      @include respond-to(mobile) {
+        width: 220px;
+      }
+    }
   }
 }
 
@@ -137,6 +135,7 @@
     border-radius: 4px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+
     &::placeholder {
       color: rgba(35, 37, 54, 1);
       font-size: 16px;
@@ -147,6 +146,7 @@
     @include respond-to(tablet) {
       width: 599px;
     }
+
     @include respond-to(mobile) {
       width: 399px;
     }
@@ -162,15 +162,6 @@
   }
 
   button {
-    height: 76px; // задаем одинаковую высоту для кнопки
-    background-color: #f8c146;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    box-sizing: border-box; // включает padding в размер кнопки
-
     &:disabled {
       cursor: not-allowed;
     }
