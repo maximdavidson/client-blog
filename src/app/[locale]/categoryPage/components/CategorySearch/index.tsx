@@ -136,6 +136,7 @@ export const CategorySearch = ({
             href={`/categoryPage/${category.title}`}
             onClick={handleCategorySelect(category.title)}
             className={style.search_item}
+            data-testid={`category-item-${category.title}`}
           >
             <Image
               src={category.iconSrc}
@@ -156,6 +157,7 @@ export const CategorySearch = ({
               key={tag}
               className={`${style.tag} ${activeTag === tag ? style.activeTag : ''}`}
               onClick={handleTagClickWrapper(tag)}
+              data-testid={`tag-item-${tag}`}
             >
               {tag}
             </span>

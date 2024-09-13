@@ -121,6 +121,7 @@ export const ContactForm: FC = () => {
           icon={null}
           type="submit"
           disabled={isSubmitting}
+          data-testid="submit_btn"
         >
           {isSubmitting ? 'Sending...' : 'Submit'}
         </Button>
