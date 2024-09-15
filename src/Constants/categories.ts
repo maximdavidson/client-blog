@@ -1,6 +1,6 @@
 export const categories = [
-  { title: 'Business', iconSrc: '/images/business.png' },
-  { title: 'Startup', iconSrc: '/images/startup.png' },
-  { title: 'Economy', iconSrc: '/images/economy.png' },
-  { title: 'Technology', iconSrc: '/images/technology.png' },
+  { key: 'business', iconSrc: '/images/business.png' },
+  { key: 'startup', iconSrc: '/images/startup.png' },
+  { key: 'economy', iconSrc: '/images/economy.png' },
+  { key: 'technology', iconSrc: '/images/technology.png' },
 ];

@@ -7,7 +7,7 @@ import Button from '@/UI/Button';
 import style from './style.module.scss';
 
 interface Category {
-  title: string;
+  key: string;
   iconSrc: string;
 }
 
@@ -31,7 +31,10 @@ export const CategorySearch = ({
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
   useEffect(() => {
-    const allItems = [...categories.map((category) => category.title), ...tags];
+    const allItems = [
+      ...categories.map((category) => t(`Categories.${category.key}`)),
+      ...tags,
+    ];
     if (searchTerm) {
       const resultSet = new Set(
         allItems.filter((item) =>
@@ -45,7 +48,7 @@ export const CategorySearch = ({
       setFilteredResults([]);
       setSearchError('');
     }
-  }, [searchTerm, categories, tags]);
+  }, [searchTerm, categories, tags, t]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -55,12 +58,13 @@ export const CategorySearch = ({
     if (searchTerm) {
       const lowerSearchTerm = searchTerm.toLowerCase();
       const category = categories.find(
-        (category) => category.title.toLowerCase() === lowerSearchTerm,
+        (category) =>
+          t(`Categories.${category.key}`).toLowerCase() === lowerSearchTerm,
       );
       const tag = tags.find((tag) => tag.toLowerCase() === lowerSearchTerm);
 
       if (category) {
-        onCategorySelect(category.title);
+        onCategorySelect(category.key);
       } else if (tag) {
         onTagSelect(tag);
         setActiveTag(tag);
@@ -89,8 +93,8 @@ export const CategorySearch = ({
     handleTagClick(tag);
   };
 
-  const handleCategorySelect = (title: string) => () => {
-    onCategorySelect(title);
+  const handleCategorySelect = (key: string) => () => {
+    onCategorySelect(key);
   };
 
   return (
@@ -132,20 +136,22 @@ export const CategorySearch = ({
         </h1>
         {categories.map((category) => (
           <Link
-            key={category.title}
-            href={`/categoryPage/${category.title}`}
-            onClick={handleCategorySelect(category.title)}
+            key={category.key}
+            href={`/categoryPage/${category.key}`}
+            onClick={handleCategorySelect(category.key)}
             className={style.search_item}
-            data-testid={`category-item-${category.title}`}
+            data-testid={`category-item-${category.key}`}
           >
             <Image
               src={category.iconSrc}
-              alt={`${category.title} Image`}
+              alt={`${t(`Categories.${category.key}`)} Image`}
               width={48}
               height={48}
               className={style.ico}
             />
-            <h2 className={style.item_title}>{category.title}</h2>
+            <h2 className={style.item_title}>
+              {t(`Categories.${category.key}`)}
+            </h2>
           </Link>
         ))}
       </div>
@@ -167,7 +173,7 @@ export const CategorySearch = ({
 
       {filteredResults.length === 1 &&
         categories.some(
-          (category) => category.title === filteredResults[0],
+          (category) => t(`Categories.${category.key}`) === filteredResults[0],
         ) && (
           <Link
             href={`/categoryPage/${filteredResults[0]}`}

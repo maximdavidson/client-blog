@@ -31,19 +31,16 @@ export const Category = () => {
             {t('CategoriesSection.chooseACategory')}
           </h1>
           <div className={style.cardsContainer}>
-            {categories.map(({ title, iconSrc }) => (
-              <div key={title}>
-                <Link
-                  className={style.link}
-                  href={`${Routes.Category}/${title}`}
-                >
+            {categories.map(({ key, iconSrc }) => (
+              <div key={key}>
+                <Link className={style.link} href={`${Routes.Category}/${key}`}>
                   <CategoryCard
                     iconSrc={iconSrc}
-                    iconAlt={`${title} Card Icon`}
+                    iconAlt={t(`Categories.${key}`) + ' Card Icon'}
                     iconWidth={48}
                     iconHeight={48}
-                    title={title}
-                    description={`Posts about ${title}.`}
+                    title={t(`Categories.${key}`)}
+                    description={t(`Categories.${key}.description`)}
                   />
                 </Link>
               </div>

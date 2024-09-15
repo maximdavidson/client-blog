@@ -6,6 +6,7 @@ import { Routes } from '@/constants/routes';
 import { authors } from '@/data/authors';
 import { Link } from '@/navigation';
 import { AuthorCard } from './components/AuthorCard';
+import { AUTHOR_LIST_LIMIT } from './constants';
 import style from './style.module.scss';
 
 export const ListOfAuthors = () => {
@@ -28,7 +29,7 @@ export const ListOfAuthors = () => {
         <>
           <h1 className={style.title}>{t('AuthorsSection.title')}</h1>
           <div className={style.cards}>
-            {authors.slice(0, 4).map((author) => (
+            {authors.slice(0, AUTHOR_LIST_LIMIT).map((author) => (
               <Link href={`${Routes.Author}/${author.id}`} key={author.id}>
                 <AuthorCard
                   avatarSrc={author.avatarSrc}
