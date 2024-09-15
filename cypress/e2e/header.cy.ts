@@ -1,7 +1,7 @@
 import { Routes } from '@/constants/routes';
 
 describe('Header Navigation and Video Modal', () => {
-  const appHost = Cypress.env('APP_HOST') || 'http://localhost:3001/en';
+  const appHost = Cypress.env('APP_HOST') || 'http://localhost:3000/en';
 
   beforeEach(() => {
     cy.visit(appHost);

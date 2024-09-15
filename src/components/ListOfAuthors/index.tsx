@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
 import { authors } from '@/data/authors';
+import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import { AuthorCard } from './components/AuthorCard';
 import style from './style.module.scss';
@@ -28,7 +29,7 @@ export const ListOfAuthors = () => {
           <h1 className={style.title}>{t('AuthorsSection.title')}</h1>
           <div className={style.cards}>
             {authors.slice(0, 4).map((author) => (
-              <Link href={`/authorPage/${author.id}`} key={author.id}>
+              <Link href={`${Routes.Author}/${author.id}`} key={author.id}>
                 <AuthorCard
                   avatarSrc={author.avatarSrc}
                   name={author.name}

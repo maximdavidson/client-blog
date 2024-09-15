@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
 import { categories } from '@/constants/categories';
+import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import { CategoryCard } from './components/CategoryCard';
 import style from './style.module.scss';
@@ -32,7 +33,10 @@ export const Category = () => {
           <div className={style.cardsContainer}>
             {categories.map(({ title, iconSrc }) => (
               <div key={title}>
-                <Link className={style.link} href={`/categoryPage/${title}`}>
+                <Link
+                  className={style.link}
+                  href={`${Routes.Category}/${title}`}
+                >
                   <CategoryCard
                     iconSrc={iconSrc}
                     iconAlt={`${title} Card Icon`}

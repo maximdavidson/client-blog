@@ -1,19 +1,17 @@
 import { Routes } from '@/constants/routes';
 
-const URL = 'https://api.emailjs.com/api/v1.0/email/send';
-
 describe('Contact Form', () => {
   const appHost =
-    Cypress.env('APP_HOST') || 'http://localhost:3001/en/contactPage';
+    Cypress.env('APP_HOST') || 'http://localhost:3000/en/contactPage';
 
   beforeEach(() => {
     cy.visit(appHost);
   });
 
   it('should submit the form successfully and show success toast', () => {
-    cy.intercept('POST', URL, {
+    cy.intercept('POST', '/api/sendEmail', {
       statusCode: 200,
-      body: {},
+      body: { success: true },
     }).as('sendContactsForm');
 
     cy.get('input[name="fullName"]').type('John Doe');

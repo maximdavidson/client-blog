@@ -1,4 +1,4 @@
-const appHost = Cypress.env('APP_HOST') || 'http://localhost:3001/en';
+const appHost = Cypress.env('APP_HOST') || 'http://localhost:3000/en';
 
 describe('Language Switcher in Footer', () => {
   beforeEach(() => {
