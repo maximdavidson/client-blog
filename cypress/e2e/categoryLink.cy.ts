@@ -1,5 +1,5 @@
-import { Routes } from '@/constants/routes';
 import { categories } from '@/constants/categories';
+import { Routes } from '@/constants/routes';
 
 describe('Category Navigation', () => {
   const appHost = Cypress.env('APP_HOST') || 'http://localhost:3000/en';

@@ -1,5 +1,3 @@
-import { Routes } from '@/constants/routes';
-
 describe('Contact Form', () => {
   const appHost =
     Cypress.env('APP_HOST') || 'http://localhost:3000/en/contactPage';

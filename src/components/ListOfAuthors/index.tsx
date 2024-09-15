@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
-import { authors } from '@/data/authors';
 import { Routes } from '@/constants/routes';
+import { authors } from '@/data/authors';
 import { Link } from '@/navigation';
 import { AuthorCard } from './components/AuthorCard';
 import style from './style.module.scss';

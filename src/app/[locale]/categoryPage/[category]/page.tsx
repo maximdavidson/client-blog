@@ -4,11 +4,11 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { categories } from '@/constants/categories';
 import { tags } from '@/constants/tags';
 import { Post } from '@/data/authors';
+import { getPostsByCategoryAndTag } from '@/utils/getPostsByCategoryAndTag';
 import { CategoryHeader } from '../components/categoryHeader';
 import { CategorySearch } from '../components/CategorySearch';
 import { MainOfCategory } from '../components/MainInCategory';
 import style from '../page.module.scss';
-import { getPostsByCategoryAndTag } from '@/utils/getPostsByCategoryAndTag';
 
 interface CategoryPageProps {
   params: {

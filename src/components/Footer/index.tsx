@@ -3,9 +3,9 @@
 import React, { useState, useTransition } from 'react';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
+import { socials } from '@/constants/footerSocials';
 import { locales } from '@/constants/locales';
 import { Routes } from '@/constants/routes';
-import { socials } from '@/constants/footerSocials';
 import { Link, useRouter, usePathname } from '@/navigation';
 
 import Button from '@/UI/Button';

@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react';
-import Button from './index';
 import { SlArrowRight } from 'react-icons/sl';
+import Button from './index';
 
 const meta: Meta<typeof Button> = {
   title: 'Example/Button',
