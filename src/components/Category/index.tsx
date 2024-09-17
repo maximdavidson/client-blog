@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
 import { categories } from '@/constants/categories';
+import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import { CategoryCard } from './components/CategoryCard';
 import style from './style.module.scss';
-import { Routes } from '../../constants/routes';
 
 export const Category = () => {
   const t = useTranslations();

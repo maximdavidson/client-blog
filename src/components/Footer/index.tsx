@@ -6,8 +6,8 @@ import { useLocale, useTranslations } from 'next-intl';
 import { socials } from '@/constants/footerSocials';
 import { locales } from '@/constants/locales';
 import { Routes } from '@/constants/routes';
-import { Link, useRouter, usePathname } from '@/navigation';
 
+import { Link, useRouter, usePathname } from '@/navigation';
 import Button from '@/UI/Button';
 import { sendEmail } from '@/utils/sendEmail';
 import style from './style.module.scss';

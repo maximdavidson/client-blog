@@ -2,10 +2,10 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
+import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
-import { Routes } from '../../constants/routes';
 
 export const AboutUs = () => {
   const t = useTranslations();
