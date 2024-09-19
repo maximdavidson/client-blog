@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import style from './style.module.scss';
 
@@ -26,7 +27,7 @@ export const AuthorPosts: React.FC<AuthorPostsProps> = ({ posts }) => {
     <div className={style.container}>
       <h1 className={style.title}>{t('AuthorPage.title')}</h1>
       {posts.map((post) => (
-        <Link key={post.id} href={`/blogPostPage/${post.id}`}>
+        <Link key={post.id} href={`${Routes.Post}/${post.id}`}>
           <div className={style.post_card} key={post.id}>
             <div className={style.image_wrap}>
               <Image

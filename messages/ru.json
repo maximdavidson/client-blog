@@ -103,7 +103,10 @@
         "name": "Полное имя",
         "email": "Ваш email",
         "queryRelated": "Темы запроса",
-        "message": "Сообщение"
+        "message": "Сообщение",
+        "support": "Поддержка",
+        "sales": "Продажи",
+        "other": "Другое"
       },
       "Validation": {
         "required": "Поле {field} обязательно для заполнения",

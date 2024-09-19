@@ -40,7 +40,7 @@ export const Category = () => {
                     iconWidth={48}
                     iconHeight={48}
                     title={t(`Categories.${key}`)}
-                    description={t(`Categories.${key}.description`)}
+                    description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
                   />
                 </Link>
               </div>

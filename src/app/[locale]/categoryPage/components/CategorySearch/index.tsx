@@ -85,8 +85,13 @@ export const CategorySearch = ({
   };
 
   const handleTagClick = (tag: string) => {
-    onTagSelect(tag);
-    setActiveTag(tag);
+    if (activeTag === tag) {
+      setActiveTag(null);
+      onTagSelect('');
+    } else {
+      onTagSelect(tag);
+      setActiveTag(tag);
+    }
   };
 
   const handleTagClickWrapper = (tag: string) => () => {

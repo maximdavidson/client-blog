@@ -1,11 +1,12 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SlArrowRight } from 'react-icons/sl';
 import { useInView } from 'react-intersection-observer';
-import { posts } from '@/constants/futuresPostMock';
 import { Routes } from '@/constants/routes';
+import { authors, Post } from '@/data/authors';
 import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
@@ -24,6 +25,12 @@ export const FeaturedPosts = () => {
       setIsVisible(true);
     }
   }, [inView]);
+
+  const allPosts: Post[] = authors.reduce<Post[]>((acc, author) => {
+    return [...acc, ...author.posts];
+  }, []);
+
+  const postsToShow = allPosts.slice(0, 4);
 
   return (
     <div className={style.container} ref={ref}>
@@ -55,7 +62,7 @@ export const FeaturedPosts = () => {
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                 cupidatat non proident.
               </p>
-              <Link href={Routes.Post}>
+              <Link href={Routes.Blog}>
                 <Button variant="primary" size="medium" icon={<SlArrowRight />}>
                   {t('Post.btn_title')}
                 </Button>
@@ -65,21 +72,24 @@ export const FeaturedPosts = () => {
 
           <div className={style.all_wrap}>
             <div className={style.title_wrap}>
-              <h1 className={style.title}> {t('HomePostsSection.allPosts')}</h1>
+              <h1 className={style.title}>{t('HomePostsSection.allPosts')}</h1>
               <Link className={style.link} href={Routes.Blog}>
                 {t('HomePostsSection.viewAll')}
               </Link>
             </div>
 
-            {posts.map((post) => (
-              <div key={post.id} className={style.post_item}>
-                <p className={style.item_text}>
-                  {t('Post.by')}
-                  <span className={style.item_text}>{post.author}</span> |{' '}
-                  {post.date}
-                </p>
-                <h1 className={style.item_title}>{post.title}</h1>
-              </div>
+            {postsToShow.map((post) => (
+              <Link key={post.id} href={`${Routes.Post}/${post.id}`}>
+                <div className={style.post_item}>
+                  <p className={style.item_text}>
+                    {t('Post.by')}
+                    <span className={style.item_text}>
+                      {post.author}
+                    </span> | {post.date}
+                  </p>
+                  <h1 className={style.item_title}>{post.title}</h1>
+                </div>
+              </Link>
             ))}
           </div>
         </>

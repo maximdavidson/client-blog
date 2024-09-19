@@ -29,7 +29,9 @@ export const Header = () => {
 
   return (
     <header className={style.container}>
-      <h1 className={style.title}> {t('Logo.title')}</h1>
+      <Link href={Routes.Home}>
+        <h1 className={style.title}> {t('Logo.title')}</h1>
+      </Link>
       <div className={style.navigate_wrap}>
         <div className={style.burger_menu} onClick={toggleMenu}>
           <Image

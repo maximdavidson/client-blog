@@ -26,6 +26,9 @@ export const ContactForm: FC = () => {
     reset,
   } = useForm<IFormInput>({
     resolver: yupResolver(schema),
+    defaultValues: {
+      queryRelated: '', // Установите значение по умолчанию как пустую строку
+    },
   });
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
@@ -44,6 +47,7 @@ export const ContactForm: FC = () => {
       console.error('Failed to send email:', error);
     }
   };
+
   return (
     <div className={style.container}>
       <div className={style.text_wrapper}>
@@ -98,9 +102,15 @@ export const ContactForm: FC = () => {
             <option value="" disabled>
               {t('ContactsUs.Form.Placeholders.queryRelated')}
             </option>
-            <option value="support">Support</option>
-            <option value="sales">Sales</option>
-            <option value="other">Other</option>
+            <option value="support">
+              {t('ContactsUs.Form.Placeholders.support')}
+            </option>
+            <option value="sales">
+              {t('ContactsUs.Form.Placeholders.sales')}
+            </option>
+            <option value="other">
+              {t('ContactsUs.Form.Placeholders.other')}
+            </option>
           </select>
           {errors.queryRelated && (
             <p className={style.error}>{errors.queryRelated.message}</p>

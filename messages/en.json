@@ -100,7 +100,10 @@
         "name": "Full Name",
         "email": "Your Email",
         "queryRelated": "Query Related",
-        "message": "Message"
+        "message": "Message",
+        "support": "Support",
+        "sales": "Sales",
+        "other": "Other"
       },
       "Validation": {
         "required": "{field} is required",

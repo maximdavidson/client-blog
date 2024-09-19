@@ -16,9 +16,12 @@ export const CategoryHeader = ({ category }: CategoryHeaderProps) => {
         <h1 className={style.title}>
           {t(`Categories.${category.toLowerCase()}`)}
         </h1>
-        <p className={style.text}>{t('CategoryHeader.description')}</p>
+        <p className={style.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore.
+        </p>
         <p className={style.sub_text}>
-          {t('CategoryHeader.blog')} <SlArrowRight className={style.icon} />{' '}
+          Blog <SlArrowRight className={style.icon} />
           {t(`Categories.${category.toLowerCase()}`)}
         </p>
       </div>

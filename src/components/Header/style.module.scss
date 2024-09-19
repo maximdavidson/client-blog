@@ -20,6 +20,10 @@
   @include respond-to(tablet) {
     font-size: 18px;
   }
+
+  &:hover {
+    opacity: 70%;
+  }
 }
 
 .navigate_wrap {
