@@ -1,11 +1,11 @@
 export const Routes = {
   Home: '/',
-  Blog: '/blogPage',
-  Post: '/blogPostPage',
-  Category: '/categoryPage',
-  Author: '/authorPage',
+  Blog: '/blog',
+  Post: '/blogPost',
+  Category: '/category',
+  Author: '/author',
 
-  AboutUs: '/aboutusPage',
-  ContactUs: '/contactPage',
-  PrivacyPolicy: '/privatePolicyPage',
+  AboutUs: '/aboutus',
+  ContactUs: '/contact',
+  PrivacyPolicy: '/privatePolicy',
 };

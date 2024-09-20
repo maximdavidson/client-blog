@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { categories } from '@/constants/categories';
 import { tags } from '@/constants/tags';
 import { Post } from '@/data/authors';
@@ -39,18 +38,16 @@ const CategoryPage = ({ params }: CategoryPageProps) => {
 
   return (
     <>
-      <ErrorBoundary>
-        <CategoryHeader category={category} />
-        <div className={style.flex_container}>
-          <MainOfCategory posts={posts} />
-          <CategorySearch
-            categories={categories}
-            tags={tags}
-            onCategorySelect={handleCategorySelect}
-            onTagSelect={handleTagSelect}
-          />
-        </div>
-      </ErrorBoundary>
+      <CategoryHeader category={category} />
+      <div className={style.flex_container}>
+        <MainOfCategory posts={posts} />
+        <CategorySearch
+          categories={categories}
+          tags={tags}
+          onCategorySelect={handleCategorySelect}
+          onTagSelect={handleTagSelect}
+        />
+      </div>
     </>
   );
 };

@@ -9,7 +9,6 @@ describe('Header Navigation and Video Modal', () => {
 
   it('should navigate to Blog page', () => {
     cy.contains('button', 'Read More').click();
-    cy.wait(5000);
     cy.url().should('include', Routes.Blog);
   });
 });

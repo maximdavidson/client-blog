@@ -23,13 +23,16 @@ export const AboutUs = () => {
   }, [inView]);
 
   return (
-    <div className={style.container} ref={ref}>
+    <div
+      className={`${style.container} ${isVisible ? style.fadeIn : ''}`}
+      ref={ref}
+    >
       {isVisible && (
         <>
-          <div className={style.stripe}></div>
-          <div className={style.wrapper}>
+          <div className={`${style.stripe} ${style.fadeInUp}`}></div>
+          <div className={`${style.wrapper} ${style.fadeInUp}`}>
             <div className={style.small_wrap}>
-              <div className={style.about_wrap}>
+              <div className={`${style.about_wrap} ${style.fadeInUp}`}>
                 <h4 className={style.sub_title}>
                   {t('HomeInfoSection.about_subtitle')}
                 </h4>
@@ -47,7 +50,7 @@ export const AboutUs = () => {
                   </Link>
                 </div>
               </div>
-              <div className={style.mission_wrap}>
+              <div className={`${style.mission_wrap} ${style.fadeInUp}`}>
                 <h4 className={style.sub_title}>
                   {t('HomeInfoSection.mission_subtitle')}
                 </h4>

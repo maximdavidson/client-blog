@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { Routes } from '@/constants/routes';
 import { Post } from '@/data/authors';
+import { Link } from '@/navigation';
 import style from './style.module.scss';
 
 interface BlogPostPageMainSectionProps {
   post: Post;
   author: {
+    id: any;
     name: string;
     avatarSrc: string;
     role: string;
@@ -20,23 +23,26 @@ export const BlogPostPageMainSection = ({
   return (
     <div className={style.container}>
       <div className={style.person_card_wrap}>
-        <div className={style.person_card}>
-          <div className={style.avatar}>
-            <Image
-              src={author.avatarSrc}
-              alt="Avatar"
-              width={48}
-              height={48}
-              className={style.avatar_image}
-            />
+        <Link href={`${Routes.Author}/${author.id}`}>
+          <div className={style.person_card}>
+            <div className={style.avatar}>
+              <Image
+                src={author.avatarSrc}
+                alt="Avatar"
+                width={48}
+                height={48}
+                className={style.avatar_image}
+              />
+            </div>
+
+            <div className={style.user_info}>
+              <h2 className={style.user_name}>{author.name}</h2>
+              <p className={style.user_date}>
+                {t('BlogPost.postedOn')} {post.date}
+              </p>
+            </div>
           </div>
-          <div className={style.user_info}>
-            <h2 className={style.user_name}>{author.name}</h2>
-            <p className={style.user_date}>
-              {t('BlogPost.postedOn')} {post.date}
-            </p>
-          </div>
-        </div>
+        </Link>
         <h1 className={style.title}>{post.title}</h1>
         <div className={style.startup_wrap}>
           <Image

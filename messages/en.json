@@ -13,8 +13,13 @@
     "btn_title": "Video about us"
   },
   "SubscribeForm": {
-    "title": "Subscribe to our news letter to get latest updates and news",
-    "placeholder": "Enter Your Email"
+    "title": "Subscribe to our newsletter to get the latest updates and news",
+    "placeholder": "Enter your email",
+    "btn_title": "Subscribe",
+    "loading": "Subscribing...",
+    "done": "Done!",
+    "error": "An error occurred. Please try again later!",
+    "success": "Subscription successful. Check your email!"
   },
   "Post": {
     "postedOn": "Posted on ",

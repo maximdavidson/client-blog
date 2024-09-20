@@ -9,7 +9,6 @@ describe('About Us Navigation', () => {
 
   it('should navigate to the About Us page when clicking the button', () => {
     cy.contains('button', 'Read More').click();
-    cy.wait(5000);
     cy.url().should('include', Routes.AboutUs);
   });
 });

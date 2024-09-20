@@ -16,11 +16,15 @@
 }
 
 .collection_item {
-  padding-left: 15px;
+  padding: 15px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.3s ease;
+
   @include respond-to(tablet) {
-    padding-right: 15px;
-    padding-top: 10px;
+    padding: 10px 15px;
   }
 }
 
@@ -76,15 +80,18 @@
 .line {
   margin-top: 64px;
   background-color: rgba(214, 214, 214, 0.637);
-  width: 1280px;
+  width: 100%;
+  max-width: 1280px;
   height: 2px;
   margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
 
   @include respond-to(tablet) {
-    width: 580px;
+    max-width: 580px;
   }
 
   @include respond-to(mobile) {
-    width: 350px;
+    max-width: 350px;
   }
 }

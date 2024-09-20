@@ -24,9 +24,12 @@ export const SpecialPost = () => {
   }, [inView]);
 
   return (
-    <div className={style.container} ref={ref}>
+    <div
+      className={`${style.container} ${isVisible ? style.fadeIn : ''}`}
+      ref={ref}
+    >
       {isVisible && (
-        <div className={style.wrapper}>
+        <div className={`${style.wrapper} ${style.fadeInUp}`}>
           <div className={style.image_wrap}>
             <Image
               src="/images/specialPost.png"

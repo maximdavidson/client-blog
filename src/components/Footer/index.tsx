@@ -17,6 +17,8 @@ export const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const [loading, setLoading] = useState(false); // состояние для лоадера
+  const [message, setMessage] = useState<string | null>(null); // состояние для сообщения об ошибке/успехе
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
@@ -27,18 +29,30 @@ export const Footer = () => {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true); // включаем лоадинг
+    setMessage(null); // сбрасываем старые сообщения
 
     try {
-      const templateParams = {
-        to_email: email,
-      };
+      const response = await fetch(
+        'https://getform.io/f/{your-form-endpoint}',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        },
+      );
 
-      await sendEmail(templateParams);
-
-      setIsSubscribed(true);
-      setEmail('');
+      if (response.ok) {
+        setIsSubscribed(true);
+        setEmail('');
+        setMessage(t('SubscribeForm.success'));
+      } else {
+        setMessage(t('SubscribeForm.error'));
+      }
     } catch (error) {
-      console.error('Failed to send email:', error);
+      setMessage(t('SubscribeForm.error'));
+    } finally {
+      setLoading(false); // отключаем лоадинг
     }
   };
 
@@ -92,11 +106,22 @@ export const Footer = () => {
             />
 
             <div className={style.btnWrapper}>
-              <Button variant="primary" size="large" icon={null} type="submit">
-                {isSubscribed ? 'Done' : 'Subscribe'}
+              <Button
+                variant="primary"
+                size="large"
+                icon={null}
+                type="submit"
+                disabled={loading || isSubscribed}
+              >
+                {loading
+                  ? t('SubscribeForm.loading')
+                  : isSubscribed
+                    ? t('SubscribeForm.done')
+                    : t('SubscribeForm.btn_title')}
               </Button>
             </div>
           </form>
+          {message && <p className={style.message}>{message}</p>}
         </div>
 
         <div className={style.bottom}>

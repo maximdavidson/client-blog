@@ -11,6 +11,24 @@
     margin-right: 20px;
   }
 
+  &.fadeIn {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+  }
+
+  .fadeInUp {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 2s ease forwards;
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
   .stripe {
     position: absolute;
     top: -23px;
@@ -20,8 +38,7 @@
     background: linear-gradient(to right, #ffd700 70%, #6a0dad 70%);
 
     @include respond-to(tablet) {
-      width: 561px;
-      left: 29px;
+      display: none;
     }
 
     @include respond-to(mobile) {

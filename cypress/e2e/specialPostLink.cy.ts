@@ -9,7 +9,6 @@ describe('Special Post Navigation', () => {
 
   it('should navigate to the About Us page when clicking the button', () => {
     cy.contains('button', 'Discover our story').click();
-    cy.wait(1000);
     cy.url().should('include', Routes.AboutUs);
   });
 });

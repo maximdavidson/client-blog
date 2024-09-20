@@ -33,10 +33,13 @@ export const FeaturedPosts = () => {
   const postsToShow = allPosts.slice(0, 4);
 
   return (
-    <div className={style.container} ref={ref}>
+    <div
+      className={`${style.container} ${isVisible ? style.fadeIn : ''}`}
+      ref={ref}
+    >
       {isVisible && (
         <>
-          <div className={style.feature_wrap}>
+          <div className={`${style.feature_wrap} ${style.fadeInUp}`}>
             <h1 className={style.title}>
               {t('HomePostsSection.featuredPost')}
             </h1>
@@ -80,7 +83,7 @@ export const FeaturedPosts = () => {
 
             {postsToShow.map((post) => (
               <Link key={post.id} href={`${Routes.Post}/${post.id}`}>
-                <div className={style.post_item}>
+                <div className={`${style.post_item} ${style.fadeInUp}`}>
                   <p className={style.item_text}>
                     {t('Post.by')}
                     <span className={style.item_text}>

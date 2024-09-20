@@ -9,7 +9,6 @@ import style from './style.module.scss';
 export const Testimonial = () => {
   const t = useTranslations();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [_, setDirection] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -23,14 +22,12 @@ export const Testimonial = () => {
   }, [inView]);
 
   const handlePrevClick = () => {
-    setDirection(-1);
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1,
     );
   };
 
   const handleNextClick = () => {
-    setDirection(1);
     setCurrentIndex((prevIndex) =>
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1,
     );
@@ -39,7 +36,10 @@ export const Testimonial = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <div className={style.container} ref={ref}>
+    <div
+      className={`${style.container} ${isVisible ? style.fadeIn : ''}`}
+      ref={ref}
+    >
       {isVisible && (
         <>
           <div className={style.leftSection}>
@@ -51,7 +51,9 @@ export const Testimonial = () => {
               {t('TestimonialsSection.description')}
             </p>
           </div>
-          <div className={style.rightSection}>
+          <div
+            className={`${style.rightSection} ${isVisible ? style.fadeInUp : ''}`}
+          >
             <p className={style.testimonialText}>{currentTestimonial.text}</p>
 
             <div className={style.authorSection}>

@@ -8,6 +8,12 @@
   grid-template-columns: 1fr 1fr;
   background-color: #fdf7e9;
   padding: 92px 120px 75px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+
+  &.fadeIn {
+    opacity: 1; // Убираем прозрачность при видимости
+  }
 
   @include respond-to(tablet) {
     grid-template-columns: 1fr;
@@ -86,6 +92,19 @@
         font-size: 18px;
         line-height: 26px;
         max-width: none;
+      }
+
+      &.fadeInUp {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 2s ease forwards;
+
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       }
     }
 

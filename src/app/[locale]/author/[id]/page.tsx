@@ -1,7 +1,6 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { authors } from '@/data/authors';
 import { AuthorInfo } from '../components/AuthorInfo';
 import { AuthorPosts } from '../components/AuthorPosts';
@@ -17,10 +16,8 @@ const AuthorPage: React.FC = () => {
 
   return (
     <>
-      <ErrorBoundary>
-        <AuthorInfo author={author} />
-        <AuthorPosts posts={author.posts} />
-      </ErrorBoundary>
+      <AuthorInfo author={author} />
+      <AuthorPosts posts={author.posts} />
     </>
   );
 };

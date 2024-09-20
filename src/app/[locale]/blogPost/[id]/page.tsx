@@ -1,6 +1,5 @@
 'use client';
 import { useParams } from 'next/navigation';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { JoinUs } from '@/components/JoinUs';
 import { authors } from '@/data/authors';
 import { BlogCollection } from '../components/BlogPostPageCollection';
@@ -28,11 +27,9 @@ const BlogPostPage = () => {
 
   return (
     <>
-      <ErrorBoundary>
-        <BlogPostPageMainSection post={post} author={author} />
-        <BlogCollection />
-        <JoinUs />
-      </ErrorBoundary>
+      <BlogPostPageMainSection post={post} author={author} />
+      <BlogCollection />
+      <JoinUs />
     </>
   );
 };

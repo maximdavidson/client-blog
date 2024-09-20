@@ -9,6 +9,24 @@
     margin-left: 60px;
     margin-right: 60px;
   }
+
+  &.fadeIn {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+  }
+
+  .fadeInUp {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 2s ease forwards;
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
 }
 
 .title {
@@ -33,6 +51,24 @@
   @include respond-to(tablet) {
     display: flex;
     flex-direction: column;
+  }
+
+  &.fadeIn {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+  }
+
+  .fadeInUp {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 2s ease forwards;
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
 }
 

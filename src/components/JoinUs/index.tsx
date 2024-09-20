@@ -22,11 +22,18 @@ export const JoinUs = () => {
   }, [inView]);
 
   return (
-    <div className={style.container} ref={ref}>
+    <div
+      className={`${style.container} ${isVisible ? style.fadeIn : ''}`}
+      ref={ref}
+    >
       {isVisible && (
         <>
-          <h1 className={style.title}>{t('JoinSection.title')}</h1>
-          <p className={style.text}>{t('JoinSection.description')}</p>
+          <h1 className={`${style.title} ${isVisible ? style.fadeInUp : ''}`}>
+            {t('JoinSection.title')}
+          </h1>
+          <p className={`${style.text} ${isVisible ? style.fadeInUp : ''}`}>
+            {t('JoinSection.description')}
+          </p>
           <Link href={Routes.ContactUs}>
             <Button variant="primary" size="medium" icon={null}>
               {t('JoinSection.btn_title')}

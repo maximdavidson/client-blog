@@ -24,11 +24,14 @@ export const ListOfAuthors = () => {
   }, [inView]);
 
   return (
-    <div className={style.container} ref={ref}>
+    <div
+      className={`${style.container} ${isVisible ? style.fadeIn : ''}`}
+      ref={ref}
+    >
       {isVisible && (
         <>
           <h1 className={style.title}>{t('AuthorsSection.title')}</h1>
-          <div className={style.cards}>
+          <div className={`${style.cards} ${isVisible ? style.fadeInUp : ''}`}>
             {authors.slice(0, AUTHOR_LIST_LIMIT).map((author) => (
               <Link href={`${Routes.Author}/${author.id}`} key={author.id}>
                 <AuthorCard

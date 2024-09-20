@@ -9,9 +9,6 @@ describe('Join Us Button Navigation', () => {
 
   it('should navigate to the Contact Us page when clicking the Join Us button', () => {
     cy.contains('button', 'Join Now').click();
-
-    cy.wait(1000);
-
     cy.url().should('include', Routes.ContactUs);
   });
 });

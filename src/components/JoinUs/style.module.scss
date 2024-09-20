@@ -1,3 +1,5 @@
+@import '@/styles/mixins.scss';
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,13 @@
   justify-content: center;
   text-align: center;
   margin-bottom: 128px;
+
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+
+  &.fadeIn {
+    opacity: 1;
+  }
 }
 
 .title {
@@ -14,6 +23,19 @@
   line-height: 48px;
   letter-spacing: -2px;
   margin-bottom: 16px;
+
+  &.fadeInUp {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 2s ease forwards;
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
 }
 
 .text {
@@ -23,4 +45,17 @@
   line-height: 28px;
   color: rgba(109, 110, 118, 0.661);
   margin-bottom: 32px;
+
+  &.fadeInUp {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 2s ease forwards;
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
 }

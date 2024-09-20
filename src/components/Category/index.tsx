@@ -24,13 +24,16 @@ export const Category = () => {
   }, [inView]);
 
   return (
-    <div className={style.container} ref={ref}>
+    <div
+      className={`${style.container} ${isVisible ? style.fadeIn : ''}`}
+      ref={ref}
+    >
       {isVisible && (
         <>
-          <h1 className={style.title}>
+          <h1 className={`${style.title} ${style.fadeInUp}`}>
             {t('CategoriesSection.chooseACategory')}
           </h1>
-          <div className={style.cardsContainer}>
+          <div className={`${style.cardsContainer} ${style.fadeInUp}`}>
             {categories.map(({ key, iconSrc }) => (
               <div key={key}>
                 <Link className={style.link} href={`${Routes.Category}/${key}`}>
