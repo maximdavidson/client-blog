@@ -17,7 +17,7 @@ export const BlogCollection = () => {
       <h2 className={style.collection_title}>{t('BlogPost.whatToReadNext')}</h2>
       <div className={style.collection_grid}>
         {posts.slice(0, NUMBER_OF_BLOG_POSTS_TO_DISPLAY).map((post) => (
-          <Link key={post.id} href={`/blogPostPage/${post.id}`}>
+          <Link key={post.id} href={`/blogPost/${post.id}`}>
             <div className={style.collection_item}>
               <Image
                 src={post.imageUrl}
@@ -34,7 +34,7 @@ export const BlogCollection = () => {
                   </span>{' '}
                   | {post.date}
                 </p>
-                <h3 className={style.collection_title}>{post.title}</h3>
+                <h3 className={style.collection_title}>{t(post.title)}</h3>
                 <p className={style.collection_description}>{post.content}</p>
               </div>
             </div>

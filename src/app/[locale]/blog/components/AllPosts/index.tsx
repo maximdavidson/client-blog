@@ -34,7 +34,7 @@ export const AllPosts = () => {
       <h1 className={style.title}>{t('BlogPosts.title')}</h1>
       <div className={style.line}></div>
       {currentPosts.map((post) => (
-        <Link href={`/blogPostPage/${post.id}`} key={post.id}>
+        <Link href={`/blogPost/${post.id}`} key={post.id}>
           <div className={style.post_card}>
             <div className={style.image_wrap}>
               <Image
@@ -47,7 +47,7 @@ export const AllPosts = () => {
             </div>
             <div className={style.text_wrap}>
               <h4 className={style.sub_title}>{post.subtitle}</h4>
-              <h1 className={style.card_title}>{post.title}</h1>
+              <h1 className={style.card_title}>{t(post.title)}</h1>
               <p className={style.text}>{post.content}</p>
             </div>
           </div>

@@ -181,5 +181,20 @@
     "startup": "Startup",
     "economy": "Economy",
     "technology": "Technology"
+  },
+
+  "PostContent": {
+    "title1": "Design tips for designers that cover everything you need",
+    "title2": "How to build rapport with your web design clients",
+    "title3": "Logo design trends to avoid in 2022",
+    "title4": "8 Figma design systems you can download for free today",
+    "title5": "Font sizes in UI design: The complete guide to follow",
+    "title6": "How to build rapport with your web design clients",
+    "title7": "Design tips for designers that cover everything you need",
+    "title8": "Font sizes in UI design: The complete guide to follow",
+    "title9": "8 Figma design systems you can download for free today",
+    "title10": "Logo design trends to avoid in 2022",
+    "title11": "8 Figma design systems you can download for free today",
+    "title12": "8 Figma design systems you can download for free today"
   }
 }

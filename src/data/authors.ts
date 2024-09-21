@@ -35,7 +35,7 @@ export const authors = [
     posts: [
       {
         id: 2,
-        title: 'How to build rapport with your web design clients',
+        title: 'PostContent.title2',
         subtitle: 'BUSINESS',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -48,7 +48,7 @@ export const authors = [
       },
       {
         id: 6,
-        title: 'How to build rapport with your web design clients',
+        title: 'PostContent.title6',
         subtitle: 'ECONOMY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -61,7 +61,7 @@ export const authors = [
       },
       {
         id: 1,
-        title: 'Design tips for designers that cover everything you need',
+        title: 'PostContent.title1',
         subtitle: 'STARTUP',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -98,7 +98,7 @@ export const authors = [
     posts: [
       {
         id: 3,
-        title: 'Logo design trends to avoid in 2022',
+        title: 'PostContent.title3',
         subtitle: 'TECHNOLOGY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -111,7 +111,7 @@ export const authors = [
       },
       {
         id: 4,
-        title: '8 Figma design systems you can download for free today',
+        title: 'PostContent.title4',
         subtitle: 'TECHNOLOGY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -124,7 +124,7 @@ export const authors = [
       },
       {
         id: 5,
-        title: 'Font sizes in UI design: The complete guide to follow',
+        title: 'PostContent.title5',
         subtitle: 'ECONOMY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -137,7 +137,7 @@ export const authors = [
       },
       {
         id: 8,
-        title: 'Font sizes in UI design: The complete guide to follow',
+        title: 'PostContent.title8',
         subtitle: 'ECONOMY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -163,7 +163,7 @@ export const authors = [
     posts: [
       {
         id: 7,
-        title: 'Design tips for designers that cover everything you need',
+        title: 'PostContent.title7',
         subtitle: 'STARTUP',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -176,7 +176,7 @@ export const authors = [
       },
       {
         id: 9,
-        title: '8 Figma design systems you can download for free today',
+        title: 'PostContent.title9',
         subtitle: 'BUSINESS',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -189,7 +189,7 @@ export const authors = [
       },
       {
         id: 10,
-        title: 'Logo design trends to avoid in 2022',
+        title: 'PostContent.title10',
         subtitle: 'STARTUP',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -225,7 +225,7 @@ export const authors = [
     posts: [
       {
         id: 11,
-        title: '8 Figma design systems you can download for free today',
+        title: 'PostContent.title11',
         subtitle: 'STARTUP',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
@@ -259,7 +259,7 @@ export const authors = [
     posts: [
       {
         id: 12,
-        title: '8 Figma design systems you can download for free today',
+        title: 'PostContent.title12',
         subtitle: 'TECHNOLOGY',
         content:
           'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',

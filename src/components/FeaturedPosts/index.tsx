@@ -90,7 +90,7 @@ export const FeaturedPosts = () => {
                       {post.author}
                     </span> | {post.date}
                   </p>
-                  <h1 className={style.item_title}>{post.title}</h1>
+                  <h1 className={style.item_title}>{t(post.title)}</h1>
                 </div>
               </Link>
             ))}

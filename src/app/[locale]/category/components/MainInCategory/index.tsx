@@ -15,7 +15,7 @@ export const MainOfCategory = ({ posts }: MainOfCategoryProps) => {
     <div className={style.container}>
       {posts.length > 0 ? (
         posts.map((post) => (
-          <Link href={`/blogPostPage/${post.id}`} key={post.id}>
+          <Link href={`/blogPost/${post.id}`} key={post.id}>
             <div className={style.post_card}>
               <div className={style.image_wrap}>
                 <Image
@@ -28,7 +28,7 @@ export const MainOfCategory = ({ posts }: MainOfCategoryProps) => {
               </div>
               <div className={style.text_wrap}>
                 <h4 className={style.sub_title}>{post.subtitle}</h4>
-                <h1 className={style.card_title}>{post.title}</h1>
+                <h1 className={style.card_title}>{t(post.title)}</h1>
                 <p className={style.text}>{post.content}</p>
               </div>
             </div>

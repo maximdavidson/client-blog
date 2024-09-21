@@ -43,7 +43,7 @@ export const BlogPostPageMainSection = ({
             </div>
           </div>
         </Link>
-        <h1 className={style.title}>{post.title}</h1>
+        <h1 className={style.title}>{t(post.title)}</h1>
         <div className={style.startup_wrap}>
           <Image
             src="/images/shuttle.png"
@@ -64,7 +64,7 @@ export const BlogPostPageMainSection = ({
       />
       <div className={style.text_side}>
         <div className={style.first_paragraph}>
-          <h1 className={style.text_title}>{post.title}</h1>
+          <h1 className={style.text_title}>{t(post.title)}</h1>
           <p className={style.text}>{post.content}</p>
         </div>
       </div>

@@ -4,6 +4,16 @@ import style from './style.module.scss';
 
 export const ContactCard = () => {
   useEffect(() => {
+    const loadYandexMapsScript = () => {
+      return new Promise((resolve) => {
+        const script = document.createElement('script');
+        script.src = `https://api-maps.yandex.ru/2.1/?apikey=${process.env.NEXT_PUBLIC_YANDEX_MAP_API_KEY}&lang=ru_RU`;
+        script.async = true;
+        script.onload = resolve;
+        document.head.appendChild(script);
+      });
+    };
+
     const initMap = () => {
       if (window.ymaps) {
         window.ymaps.ready(() => {
@@ -41,14 +51,15 @@ export const ContactCard = () => {
       }
     };
 
-    const script = document.createElement('script');
-    script.src = `https://api-maps.yandex.ru/2.1/?apikey=${process.env.NEXT_PUBLIC_YANDEX_MAP_API_KEY}&lang=ru_RU`;
-    script.async = true;
-    script.onload = initMap;
-    document.head.appendChild(script);
+    loadYandexMapsScript().then(initMap);
 
     return () => {
-      document.head.removeChild(script);
+      const script = document.querySelector(
+        `script[src*="api-maps.yandex.ru"]`,
+      );
+      if (script) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 
