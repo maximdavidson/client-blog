@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useState, useTransition } from 'react';
+import React, { useState, useTransition, ChangeEvent, FormEvent } from 'react';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { socials } from '@/constants/footerSocials';
 import { locales } from '@/constants/locales';
 import { Routes } from '@/constants/routes';
-
 import { Link, useRouter, usePathname } from '@/navigation';
 import Button from '@/UI/Button';
+import { Popup } from '@/UI/Popup';
 import { sendEmail } from '@/utils/sendEmail';
 import style from './style.module.scss';
 
@@ -17,42 +17,36 @@ export const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isPending, startTransition] = useTransition();
-  const [loading, setLoading] = useState(false); // состояние для лоадера
-  const [message, setMessage] = useState<string | null>(null); // состояние для сообщения об ошибке/успехе
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const [showPopup, setShowPopup] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  const handleSubscribe = async (e: React.FormEvent) => {
+  const handleSubscribe = async (e: FormEvent) => {
     e.preventDefault();
-    setLoading(true); // включаем лоадинг
-    setMessage(null); // сбрасываем старые сообщения
+    setLoading(true);
+    setMessage(null);
 
     try {
-      const response = await fetch(
-        'https://getform.io/f/{your-form-endpoint}',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
-        },
-      );
+      await sendEmail({
+        email,
+      });
 
-      if (response.ok) {
-        setIsSubscribed(true);
-        setEmail('');
-        setMessage(t('SubscribeForm.success'));
-      } else {
-        setMessage(t('SubscribeForm.error'));
-      }
+      setIsSubscribed(true);
+      setEmail('');
+      setMessage(t('SubscribeForm.success'));
+      setShowPopup(true);
     } catch (error) {
       setMessage(t('SubscribeForm.error'));
+      setShowPopup(true);
     } finally {
-      setLoading(false); // отключаем лоадинг
+      setLoading(false);
     }
   };
 
@@ -60,6 +54,10 @@ export const Footer = () => {
     startTransition(() => {
       router.replace({ pathname }, { locale });
     });
+  };
+
+  const handleShowPopup = () => {
+    () => setShowPopup(false);
   };
 
   return (
@@ -121,7 +119,9 @@ export const Footer = () => {
               </Button>
             </div>
           </form>
-          {message && <p className={style.message}>{message}</p>}
+          {showPopup && message && (
+            <Popup message={message} onClose={handleShowPopup} />
+          )}
         </div>
 
         <div className={style.bottom}>

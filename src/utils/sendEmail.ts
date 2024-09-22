@@ -1,17 +1,16 @@
-/* eslint-disable import/no-named-as-default-member */
-import emailjs from '@emailjs/browser';
+import { send } from '@emailjs/browser';
 
 interface EmailParams {
   [key: string]: string;
 }
 
-export const sendEmail = async (templateParams: EmailParams) => {
+export const sendEmail = async (templateParams: EmailParams): Promise<void> => {
   try {
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string;
 
-    await emailjs.send(serviceId, templateId, templateParams, userId);
+    await send(serviceId, templateId, templateParams, userId);
   } catch (error) {
     console.error('Failed to send email:', error);
     throw error;

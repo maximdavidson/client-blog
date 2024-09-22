@@ -27,7 +27,7 @@ export const ContactForm: FC = () => {
   } = useForm<IFormInput>({
     resolver: yupResolver(schema),
     defaultValues: {
-      queryRelated: '', // Установите значение по умолчанию как пустую строку
+      queryRelated: '',
     },
   });
 
@@ -112,9 +112,6 @@ export const ContactForm: FC = () => {
               {t('ContactsUs.Form.Placeholders.other')}
             </option>
           </select>
-          {errors.queryRelated && (
-            <p className={style.error}>{errors.queryRelated.message}</p>
-          )}
         </div>
 
         <Input
