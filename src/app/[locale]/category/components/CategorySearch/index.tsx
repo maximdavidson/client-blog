@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { Routes } from '@/constants/routes';
 import { Link } from '@/navigation';
 import Button from '@/UI/Button';
 import style from './style.module.scss';
@@ -29,6 +30,7 @@ export const CategorySearch = ({
   const [filteredResults, setFilteredResults] = useState<string[]>([]);
   const [searchError, setSearchError] = useState('');
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   useEffect(() => {
     const allItems = [
@@ -50,6 +52,14 @@ export const CategorySearch = ({
     }
   }, [searchTerm, categories, tags, t]);
 
+  useEffect(() => {
+    const savedCategory = localStorage.getItem('activeCategory');
+    if (savedCategory) {
+      setActiveCategory(savedCategory);
+    }
+    localStorage.removeItem('activeCategory');
+  }, []);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
@@ -65,6 +75,8 @@ export const CategorySearch = ({
 
       if (category) {
         onCategorySelect(category.key);
+        setActiveCategory(category.key);
+        localStorage.setItem('activeCategory', category.key);
       } else if (tag) {
         onTagSelect(tag);
         setActiveTag(tag);
@@ -100,6 +112,8 @@ export const CategorySearch = ({
 
   const handleCategorySelect = (key: string) => () => {
     onCategorySelect(key);
+    setActiveCategory(key);
+    localStorage.setItem('activeCategory', key);
   };
 
   return (
@@ -142,9 +156,11 @@ export const CategorySearch = ({
         {categories.map((category) => (
           <Link
             key={category.key}
-            href={`/categoryPage/${category.key}`}
+            href={`${Routes.Category}/${category.key}`}
             onClick={handleCategorySelect(category.key)}
-            className={style.search_item}
+            className={`${style.search_item} ${
+              activeCategory === category.key ? style.activeCard : ''
+            }`}
             data-testid={`category-item-${category.key}`}
           >
             <Image
@@ -166,7 +182,9 @@ export const CategorySearch = ({
           {tags.map((tag) => (
             <span
               key={tag}
-              className={`${style.tag} ${activeTag === tag ? style.activeTag : ''}`}
+              className={`${style.tag} ${
+                activeTag === tag ? style.activeTag : ''
+              }`}
               onClick={handleTagClickWrapper(tag)}
               data-testid={`tag-item-${tag}`}
             >

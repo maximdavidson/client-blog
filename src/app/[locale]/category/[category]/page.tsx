@@ -1,4 +1,5 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import { categories } from '@/constants/categories';
 import { tags } from '@/constants/tags';
@@ -15,17 +16,33 @@ interface CategoryPageProps {
   };
 }
 
+const fetchPosts = async (category: string, tag?: string): Promise<Post[]> => {
+  try {
+    const response = await fetch(
+      `/api/posts?category=${category}${tag ? `&tag=${tag}` : ''}`,
+    );
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (error) {
+    console.error('Failed to fetch posts from API:', error);
+  }
+
+  return getPostsByCategoryAndTag(category, tag);
+};
+
 const CategoryPage = ({ params }: CategoryPageProps) => {
   const { category } = params;
   const [posts, setPosts] = useState<Post[]>([]);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchedPosts = getPostsByCategoryAndTag(
-      category,
-      selectedTag || undefined,
-    );
-    setPosts(fetchedPosts.length > 0 ? fetchedPosts : []);
+    const loadPosts = async () => {
+      const fetchedPosts = await fetchPosts(category, selectedTag || undefined);
+      setPosts(fetchedPosts);
+    };
+
+    loadPosts();
   }, [category, selectedTag]);
 
   const handleTagSelect = (tag: string) => {
